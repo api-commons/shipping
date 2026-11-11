@@ -10,7 +10,8 @@ concepts:
     properties:
       status: status
       created_at: created_at
-    core_coverage: 0.0
+      metadata: metadata
+    core_coverage: 0.5
     evidence:
     - openapi/_original/hypertrack-openapi.yaml#GET /tracking/{tracking_id}
     - openapi/_original/hypertrack-openapi.yaml#POST /orders/track

@@ -23,7 +23,7 @@ concepts:
     properties:
       status: status
       id: id
-    core_coverage: 0.0
+    core_coverage: 0.5
     evidence:
     - openapi/_original/mvmnt-openapi-original.yml#POST /shipments/track
   carrier:

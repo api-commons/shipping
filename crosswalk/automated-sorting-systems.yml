@@ -6,8 +6,10 @@ concepts:
   tracking:
     path_segment:
     - tracking
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      status: state
+      location: location
+    core_coverage: 0.5
     evidence:
     - openapi/_original/automated-sorting-systems-vanderlande-datahub-openapi.json#POST /bagtags/events/tracking
     - openapi/_original/automated-sorting-systems-vanderlande-datahub-openapi.yml#POST /bagtags/events/tracking

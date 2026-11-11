@@ -7,8 +7,8 @@ concepts:
     path_segment:
     - shipments
     properties:
-      from_address: shipper
       to_address: consignee
+      from_address: shipper
       carrier:
       - carrierCode
       - carrierName

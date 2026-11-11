@@ -6,8 +6,12 @@ concepts:
   shipment:
     path_segment:
     - shipments
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      id: shipmentId
+      to_address: shipTo
+      tracking_number: trackingNumber
+      carrier: carrierCode
+    core_coverage: 0.5
     evidence:
     - openapi/_original/shipstation-v1-openapi.yml#GET /shipments
   carrier:

@@ -8,11 +8,11 @@ concepts:
     - shipments
     properties:
       id: id
+      to_address: to
       created_at: created_at
       from_address: from
-      to_address: to
-      parcels: packages
       carrier: carrier
+      parcels: packages
     core_coverage: 0.5
     evidence:
     - openapi/_original/shipcloud-openapi.yml#DELETE /shipments/{id}
@@ -30,7 +30,7 @@ concepts:
       - shipment_id
       - id
       created_at: created_at
-    core_coverage: 0.0
+    core_coverage: 0.5
     evidence:
     - openapi/_original/shipcloud-openapi.yml#GET /trackers
     - openapi/_original/shipcloud-openapi.yml#GET /trackers/{id}

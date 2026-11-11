@@ -8,6 +8,7 @@ concepts:
     - tracking
     properties:
       id: id
+      metadata: attributes
     core_coverage: 0.0
     evidence:
     - openapi/_original/ankorstore-main-openapi-original.yml#GET /api/v1/master-orders/{orderId}/tracking

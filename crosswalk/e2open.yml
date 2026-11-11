@@ -7,8 +7,7 @@ concepts:
     path_segment:
     - tracking
     properties:
-      status: status
-      events: events
+      location: location
     core_coverage: 0.0
     evidence:
     - openapi/_original/inttra-ocean-execution-openapi.yml#GET /tracking/{containerNumber}

@@ -9,8 +9,8 @@ concepts:
     properties:
       id: id
       created_at: created_at
-      updated_at: updated_at
       tracking_number: tracking_number
+      updated_at: updated_at
       carrier: carrier
     core_coverage: 0.5
     evidence:

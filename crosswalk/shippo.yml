@@ -9,9 +9,9 @@ concepts:
     properties:
       id: object_id
       status: status
+      to_address: address_to
       created_at: object_created
       from_address: address_from
-      to_address: address_to
       updated_at: object_updated
       parcels: parcels
     core_coverage: 1.0
@@ -23,9 +23,9 @@ concepts:
     path_segment:
     - rates
     properties:
-      id: object_id
-      created_at: object_created
       service: servicelevel
+      amount: amount
+      id: object_id
     core_coverage: 1.0
     evidence:
     - openapi/_original/shippo-openapi.yml#GET /rates/{RateId}
@@ -34,9 +34,10 @@ concepts:
     path_segment:
     - tracks
     properties:
-      tracking_number: tracking_number
       status: tracking_status
+      tracking_number: tracking_number
       carrier: carrier
+      metadata: metadata
     core_coverage: 1.0
     evidence:
     - openapi/_original/shippo-openapi.yml#POST /tracks

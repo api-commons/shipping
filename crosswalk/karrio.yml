@@ -9,15 +9,15 @@ concepts:
     properties:
       id: id
       status: status
+      to_address: recipient
       created_at: created_at
       from_address: shipper
-      to_address: recipient
-      updated_at: updated_at
       tracking_number: tracking_number
-      parcels: parcels
+      updated_at: updated_at
       carrier:
       - carrier_name
       - carrier_id
+      parcels: parcels
     core_coverage: 1.0
     evidence:
     - openapi/_original/karrio-openapi.yml#GET /v1/shipments
@@ -29,9 +29,8 @@ concepts:
     path_segment:
     - rates
     properties:
-      id: id
-      created_at: created_at
       service: service
+      id: id
     core_coverage: 1.0
     evidence:
     - openapi/_original/karrio-openapi.yml#POST /v1/proxy/rates
@@ -41,14 +40,16 @@ concepts:
     - trackers
     - tracking
     properties:
-      tracking_number: tracking_number
       status: status
+      tracking_number: tracking_number
       carrier:
       - carrier_name
       - carrier_id
-      events: events
       id: id
       created_at: created_at
+      metadata:
+      - reference
+      - metadata
     core_coverage: 1.0
     evidence:
     - openapi/_original/karrio-openapi.yml#DELETE /v1/trackers/{id_or_tracking_number}

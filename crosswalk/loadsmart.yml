@@ -7,7 +7,7 @@ concepts:
     path_segment:
     - shipments
     properties:
-      id: id
+      status: state
     core_coverage: 0.5
     evidence:
     - openapi/_original/loadsmart-shipperguide-openapi.yml#DELETE /api/v2/shipments/{shipment_id}

@@ -11,8 +11,8 @@ concepts:
       id:
       - id
       - shipmentId
-      from_address: sender
       to_address: receiver
+      from_address: sender
       parcels:
       - parcels
       - parcel
@@ -36,8 +36,11 @@ concepts:
   tracking:
     path_segment:
     - tracking
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      status: status
+      id: id
+      created_at: createdAt
+    core_coverage: 0.5
     evidence:
     - openapi/_original/dpd-cz-geoapi-v1-openapi.json#GET /parcels/{parcelIdent}/tracking
     - openapi/_original/dpd-cz-geoapi-v1-openapi.json#POST /parcels/tracking

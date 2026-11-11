@@ -5,11 +5,22 @@
   "description": "The common tracking in Shipping, distilled from 35 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.6,
+      "x-commons-providers": 21,
+      "x-commons-spellings": [
+        "status",
+        "state",
+        "tracking_status"
+      ]
+    },
     "tracking_number": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.571,
-      "x-commons-providers": 20,
+      "x-commons-share": 0.543,
+      "x-commons-providers": 19,
       "x-commons-spellings": [
         "tracking_number",
         "trackingId",
@@ -19,17 +30,6 @@
         "trackingNumbers",
         "trackingCode",
         "tracking_numbers"
-      ]
-    },
-    "status": {
-      "type": "string",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.486,
-      "x-commons-providers": 17,
-      "x-commons-spellings": [
-        "status",
-        "state",
-        "tracking_status"
       ]
     },
     "carrier": {
@@ -48,16 +48,6 @@
         "courier_code"
       ]
     },
-    "events": {
-      "type": "array",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.286,
-      "x-commons-providers": 10,
-      "x-commons-spellings": [
-        "events",
-        "tracking_details"
-      ]
-    },
     "id": {
       "type": "string",
       "x-commons-tier": "extended",
@@ -67,21 +57,40 @@
         "id",
         "shipment_id",
         "shipmentId",
-        "uuid",
         "_id"
       ]
     },
     "created_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.229,
-      "x-commons-providers": 8,
+      "x-commons-share": 0.257,
+      "x-commons-providers": 9,
       "x-commons-spellings": [
-        "created_at",
         "createdAt",
+        "created_at",
         "created"
       ],
       "format": "date-time"
+    },
+    "location": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.2,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "location"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.2,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "metadata",
+        "attributes",
+        "reference"
+      ]
     }
   },
   "required": [

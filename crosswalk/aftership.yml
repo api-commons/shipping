@@ -9,11 +9,11 @@ concepts:
     properties:
       id: id
       status: tracking_status
+      to_address: ship_to
       created_at: created_at
       from_address: ship_from
-      to_address: ship_to
-      updated_at: updated_at
       tracking_number: tracking_number
+      updated_at: updated_at
     core_coverage: 1.0
     evidence:
     - openapi/_original/aftership-warranty-api-openapi.yml#GET /claims/{claim_id}/shipments/{shipment_id}
@@ -22,8 +22,10 @@ concepts:
     path_segment:
     - rates
     properties:
-      id: id
-      created_at: created_at
+      service:
+      - service_type
+      - service_name
+      amount: total_charge
     core_coverage: 1.0
     evidence:
     - openapi/_original/aftership-shipping-api-openapi.yml#GET /rates

@@ -9,8 +9,8 @@ concepts:
     properties:
       id: id
       status: status
-      from_address: origin
       to_address: destination
+      from_address: origin
       carrier:
       - carrierCode
       - carrierName

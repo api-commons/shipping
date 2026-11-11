@@ -12,10 +12,10 @@ generated. Every number below is a count of providers.
 <!-- commons:summary -->
 | Concept | Expose it | Readable schema | Core properties (share) | Collection named |
 | --- | ---: | ---: | --- | --- |
-| shipment | 78 | 72 | id 74%, status 61% | shipments 57, deliveries 15, shipment 10, delivery 5 |
-| rate | 9 | 8 | id 50% | rates 8, rate 1 |
+| shipment | 78 | 72 | id 75%, status 64% | shipments 57, deliveries 15, shipment 10, delivery 5 |
+| rate | 9 | 8 | service 50% | rates 8, rate 1 |
 | label | 20 | 17 |  | labels 14, label 6, shipping-labels 2 |
-| tracking | 40 | 35 | tracking_number 57% | tracking 28, track 7, trackers 4, trackings 4 |
+| tracking | 40 | 35 | status 60%, tracking_number 54% | tracking 28, track 7, trackers 4, trackings 4 |
 | pickup | 8 | 6 | id 83%, pickup_date 67%, status 67%, address 50% | pickups 6, pickup 2 |
 | carrier | 16 | 16 | name 75%, id 56% | carriers 11, couriers 1, carrieraccounts 1, carrier 1 |
 
@@ -28,7 +28,7 @@ extended tier and the long tail of every concept are in [profile.yml](profile.ym
 ## What the measurement shows
 
 - A shipment agrees only on id and status. From and to addresses sit at 44%: carriers, multi-carrier platforms and last-mile delivery networks each nest the addresses differently.
-- Tracking agrees on the tracking number, and status sits just under (49%); the event history is modelled too differently to share.
+- Tracking agrees on the tracking number and a status; the event history is modelled too differently to share.
 - Labels agree on nothing outright: a label is a file at some providers, a purchase record at others, and part of the shipment at the rest.
 - The carriers themselves are absent: FedEx and USPS have harvested specs without recorded provenance, DHL publishes none the catalog holds, and UPS's versioned action paths do not match. The context is built from multi-carrier platforms and delivery networks.
 

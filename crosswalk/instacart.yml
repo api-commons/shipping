@@ -11,8 +11,8 @@ concepts:
       status:
       - state
       - status
-      created_at: created_at
       to_address: delivery_address
+      created_at: created_at
       parcels: items
     core_coverage: 1.0
     evidence:

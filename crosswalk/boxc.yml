@@ -8,15 +8,15 @@ concepts:
     - shipments
     properties:
       id: id
-      created_at: created
-      from_address: from
       to_address:
       - consignee
       - to
-      updated_at: updated
+      created_at: created
+      from_address: from
       tracking_number: tracking_number
-      parcels: packages
+      updated_at: updated
       carrier: carrier
+      parcels: packages
     core_coverage: 0.5
     evidence:
     - openapi/_original/boxc-openapi-original.yml#DELETE /shipments/{id}
@@ -43,10 +43,9 @@ concepts:
     path_segment:
     - track
     properties:
-      tracking_number: tracking_number
       status: status
+      tracking_number: tracking_number
       carrier: carrier
-      events: events
       id: shipment_id
       created_at: created
     core_coverage: 1.0

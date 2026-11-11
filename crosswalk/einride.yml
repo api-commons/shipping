@@ -8,13 +8,13 @@ concepts:
     - shipments
     properties:
       status: state
+      to_address: deliveryAddress
       created_at: createTime
       from_address:
       - sender
       - pickupAddress
-      to_address: deliveryAddress
-      updated_at: updateTime
       tracking_number: trackingId
+      updated_at: updateTime
     core_coverage: 0.5
     evidence:
     - openapi/_original/einride-book-openapi-original.yml#GET /v1beta1/{parent}/shipments

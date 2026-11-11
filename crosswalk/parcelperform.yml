@@ -9,11 +9,11 @@ concepts:
     properties:
       id: id
       status: status
+      to_address: recipient
       created_at: created_at
       from_address: sender
-      to_address: recipient
-      updated_at: updated_at
       tracking_number: tracking_number
+      updated_at: updated_at
       carrier: courier
     core_coverage: 1.0
     evidence:

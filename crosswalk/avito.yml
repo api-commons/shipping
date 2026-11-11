@@ -9,7 +9,8 @@ concepts:
     - tracking
     properties:
       status: status
-    core_coverage: 0.0
+      location: location
+    core_coverage: 0.5
     evidence:
     - openapi/_original/avito-delivery-sandbox-openapi.json#POST /delivery-sandbox/announcements/track
     - openapi/_original/avito-delivery-sandbox-openapi.json#POST /delivery-sandbox/order/tracking

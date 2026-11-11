@@ -6,8 +6,11 @@ concepts:
   shipment:
     path_segment:
     - shipments
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      id: shipmentId
+      status: status
+      carrier: carrierId
+    core_coverage: 1.0
     evidence:
     - openapi/_original/cargomatic-openapi.yml#GET /shipments
     - openapi/_original/cargomatic-openapi.yml#POST /shipments

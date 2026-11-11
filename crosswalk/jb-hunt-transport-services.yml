@@ -9,6 +9,6 @@ concepts:
     properties:
       status: status
       id: shipmentId
-    core_coverage: 0.0
+    core_coverage: 0.5
     evidence:
     - openapi/_original/jb-hunt-360-connect-api.yml#GET /tracking/{shipmentId}

@@ -71,8 +71,8 @@ concepts:
     properties:
     - name: id
       tier: core
-      providers: 53
-      share: 0.736
+      providers: 54
+      share: 0.75
       type: string
       spellings:
       - id
@@ -82,14 +82,28 @@ concepts:
       - object_id
     - name: status
       tier: core
-      providers: 44
-      share: 0.611
+      providers: 46
+      share: 0.639
       type: string
       spellings:
       - status
       - state
       - shipmentStatus
       - tracking_status
+    - name: to_address
+      tier: extended
+      providers: 33
+      share: 0.458
+      type: object
+      spellings:
+      - destination
+      - recipient
+      - consignee
+      - to
+      - to_address
+      - deliveryAddress
+      - address_to
+      - ship_to
     - name: created_at
       tier: extended
       providers: 32
@@ -118,20 +132,18 @@ concepts:
       - from_address
       - address_from
       - ship_from
-    - name: to_address
+    - name: tracking_number
       tier: extended
-      providers: 32
-      share: 0.444
-      type: object
+      providers: 23
+      share: 0.319
+      type: string
       spellings:
-      - destination
-      - recipient
-      - consignee
-      - to
-      - to_address
-      - deliveryAddress
-      - address_to
-      - ship_to
+      - tracking_number
+      - trackingNumber
+      - trackingId
+      - tracking_code
+      - trackingNumbers
+      - masterTrackingNumber
     - name: updated_at
       tier: extended
       providers: 23
@@ -146,18 +158,20 @@ concepts:
       - last_modified
       - modifiedDate
       - modified_at
-    - name: tracking_number
+    - name: carrier
       tier: extended
-      providers: 22
-      share: 0.306
+      providers: 20
+      share: 0.278
       type: string
       spellings:
-      - tracking_number
-      - trackingNumber
-      - trackingId
-      - tracking_code
-      - trackingNumbers
-      - masterTrackingNumber
+      - carrier
+      - courier
+      - carrierName
+      - carrierCode
+      - carrierId
+      - slug
+      - carrier_name
+      - carrier_id
     - name: parcels
       tier: extended
       providers: 20
@@ -169,37 +183,23 @@ concepts:
       - packages
       - parcel
       - pieces
-    - name: carrier
-      tier: extended
-      providers: 19
-      share: 0.264
-      type: string
-      spellings:
-      - carrier
-      - courier
-      - carrierName
-      - carrierCode
-      - carrierId
-      - carrier_name
-      - carrier_id
-      - carrier_code
-    long_tail_count: 1299
+    long_tail_count: 1325
     long_tail_sample:
     - metadata
+    - weight
     - service
     - tracking_url
-    - weight
     - currency
     - amount
     - name
     - type
     - customer
+    - order_id
+    - address
     - delivery_id
     - estimated_delivery
-    - order_id
     - rates
     - reference_number
-    - address
     - description
     - documents
     - dropoff_address
@@ -208,23 +208,23 @@ concepts:
     - label
     - label_url
     - length
+    - order_number
     - stops
     - width
+    - city
+    - dimensions
     - dropoff_eta
     - dropoff_phone_number
-    - events
     - line_items
     - number
-    - order_number
     - payment_method
     - pickup_eta
     - pickup_phone_number
+    - ship_date
     - shipment_type
     - shipping_method
-    - city
-    - dangerous_goods
-    - deleted
-    - dimensions
+    - user_id
+    - code
   rate:
     segments_seen:
       rates: 8
@@ -245,73 +245,75 @@ concepts:
       share: 0.222
       tier: long-tail
     properties:
-    - name: id
+    - name: service
       tier: core
       providers: 4
       share: 0.5
       type: string
       spellings:
-      - id
-      - guid
-      - object_id
-    - name: created_at
-      tier: extended
-      providers: 3
-      share: 0.375
-      type: string
-      spellings:
-      - created_at
-      - object_created
-    - name: service
+      - service
+      - service_type
+      - service_name
+      - servicelevel
+    - name: amount
       tier: extended
       providers: 3
       share: 0.375
       type: object
       spellings:
-      - service
-      - servicelevel
-    long_tail_count: 96
+      - total_charge
+      - amount
+    - name: id
+      tier: extended
+      providers: 3
+      share: 0.375
+      type: string
+      spellings:
+      - id
+      - guid
+      - object_id
+    long_tail_count: 97
     long_tail_sample:
-    - amount
     - carrier
+    - created_at
     - currency
     - metadata
     - ship_date
-    - status
+    - transit_days
     - accessorials
     - action
     - actual_weight
     - amount_local
+    - appointment_details
     - arrives_by
     - async
     - billing_address
+    - booking_cut_off
     - carrier_accounts
     - carrier_ids
     - channel_details
+    - charge_weight
     - client_reference_details
     - courier_id
     - courier_name
-    - created_at_max
-    - created_at_min
     - currency_local
     - currency_no
     - customs
     - declared_currency
     - declared_customs_value
     - deleted
+    - delivery_date
     - depth
     - description
     - destination_access_point_details
+    - detailed_charges
+    - error_message
     - expected_delivery_date
     - full_value_coverage_details
     - height
     - hs_code
     - identifiers
     - ineligible_rates
-    - invoice_url
-    - is_document
-    - label_type
-    - label_url
   label:
     segments_seen:
       labels: 14
@@ -389,7 +391,7 @@ concepts:
       spellings:
       - shipment
       - shipment_id
-    long_tail_count: 182
+    long_tail_count: 180
     long_tail_sample:
     - amount
     - created_at
@@ -466,10 +468,19 @@ concepts:
       share: 0.05
       tier: long-tail
     properties:
+    - name: status
+      tier: core
+      providers: 21
+      share: 0.6
+      type: string
+      spellings:
+      - status
+      - state
+      - tracking_status
     - name: tracking_number
       tier: core
-      providers: 20
-      share: 0.571
+      providers: 19
+      share: 0.543
       type: string
       spellings:
       - tracking_number
@@ -480,15 +491,6 @@ concepts:
       - trackingNumbers
       - trackingCode
       - tracking_numbers
-    - name: status
-      tier: extended
-      providers: 17
-      share: 0.486
-      type: string
-      spellings:
-      - status
-      - state
-      - tracking_status
     - name: carrier
       tier: extended
       providers: 11
@@ -503,14 +505,6 @@ concepts:
       - carrier_code
       - courierCode
       - courier_code
-    - name: events
-      tier: extended
-      providers: 10
-      share: 0.286
-      type: array
-      spellings:
-      - events
-      - tracking_details
     - name: id
       tier: extended
       providers: 10
@@ -520,59 +514,74 @@ concepts:
       - id
       - shipment_id
       - shipmentId
-      - uuid
       - _id
     - name: created_at
       tier: extended
-      providers: 8
-      share: 0.229
+      providers: 9
+      share: 0.257
       type: string
       spellings:
-      - created_at
       - createdAt
+      - created_at
       - created
-    long_tail_count: 340
+    - name: location
+      tier: extended
+      providers: 7
+      share: 0.2
+      type: object
+      spellings:
+      - location
+    - name: metadata
+      tier: extended
+      providers: 7
+      share: 0.2
+      type: object
+      spellings:
+      - metadata
+      - attributes
+      - reference
+    long_tail_count: 373
     long_tail_sample:
-    - metadata
+    - events
     - updated_at
-    - location
     - code
+    - description
     - destination
+    - service
+    - city
+    - details
     - estimated_delivery
+    - latitude
+    - longitude
     - order_id
     - order_number
-    - service
     - ship_date
-    - shipment
     - signature_required
     - weight
-    - city
-    - current_location
-    - description
-    - details
+    - country
+    - datetime
+    - destination_country
+    - event_time
+    - event_type
+    - field
     - height
-    - language
-    - latitude
+    - info
     - length
-    - longitude
     - measurements
     - note
+    - order
+    - origin
     - origin_country
     - recipient
     - refunds
-    - shipments
+    - shipment
     - source_id
     - title
     - tracking_history
     - tracking_url
     - width
+    - zip
     - accepted
-    - account_number
-    - actual_service_date
-    - additional_location_info
-    - address_from
-    - address_to
-    - adh_id
   pickup:
     segments_seen:
       pickups: 6
@@ -636,9 +645,10 @@ concepts:
       type: object
       spellings:
       - address
-    long_tail_count: 62
+    long_tail_count: 59
     long_tail_sample:
     - carrier
+    - code
     - confirmation_number
     - created_at
     - items
@@ -652,25 +662,20 @@ concepts:
     - change_messages
     - city
     - closing_time
-    - code
-    - created_at_max
-    - created_at_min
     - delivery_address
     - delivery_instructions
+    - details
     - distance
+    - end
     - fulfillment_date
     - fulfillment_location_code
     - fulfillment_type
     - hold_id
     - instruction
-    - intervals
     - label_ids
     - latitude
-    - limit
     - longitude
     - merchant_id
-    - messages
-    - next_token
     - object_type
     - options
     - package_location
@@ -678,6 +683,10 @@ concepts:
     - pickup_charge
     - pickup_confirmation_numbers
     - pickup_end_time
+    - pickup_from
+    - pickup_instructions
+    - pickup_location
+    - pickup_location_code
   carrier:
     segments_seen:
       carriers: 11

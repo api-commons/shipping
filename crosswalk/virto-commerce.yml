@@ -9,11 +9,11 @@ concepts:
     properties:
       id: id
       status: status
+      to_address: deliveryAddress
       created_at: createdDate
       from_address: from
-      to_address: deliveryAddress
-      updated_at: modifiedDate
       tracking_number: trackingNumber
+      updated_at: modifiedDate
       parcels:
       - items
       - packages

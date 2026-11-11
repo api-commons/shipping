@@ -81,8 +81,8 @@ findings:
   - "A shipment agrees only on id and status. From and to addresses sit at 44%: carriers,
     multi-carrier platforms and last-mile delivery networks each nest the addresses
     differently."
-  - "Tracking agrees on the tracking number, and status sits just under (49%); the event
-    history is modelled too differently to share."
+  - "Tracking agrees on the tracking number and a status; the event history is modelled too
+    differently to share."
   - "Labels agree on nothing outright: a label is a file at some providers, a purchase record
     at others, and part of the shipment at the rest."
   - "The carriers themselves are absent: FedEx and USPS have harvested specs without recorded

@@ -8,8 +8,8 @@ concepts:
     - deliveries
     properties:
       status: status
-      from_address: origin
       to_address: destination
+      from_address: origin
       parcels: packages
     core_coverage: 0.5
     evidence:

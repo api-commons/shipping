@@ -8,8 +8,8 @@
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.736,
-      "x-commons-providers": 53,
+      "x-commons-share": 0.75,
+      "x-commons-providers": 54,
       "x-commons-spellings": [
         "id",
         "shipmentId",
@@ -21,13 +21,29 @@
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.611,
-      "x-commons-providers": 44,
+      "x-commons-share": 0.639,
+      "x-commons-providers": 46,
       "x-commons-spellings": [
         "status",
         "state",
         "shipmentStatus",
         "tracking_status"
+      ]
+    },
+    "to_address": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.458,
+      "x-commons-providers": 33,
+      "x-commons-spellings": [
+        "destination",
+        "recipient",
+        "consignee",
+        "to",
+        "to_address",
+        "deliveryAddress",
+        "address_to",
+        "ship_to"
       ]
     },
     "created_at": {
@@ -63,20 +79,18 @@
         "ship_from"
       ]
     },
-    "to_address": {
-      "type": "object",
+    "tracking_number": {
+      "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.444,
-      "x-commons-providers": 32,
+      "x-commons-share": 0.319,
+      "x-commons-providers": 23,
       "x-commons-spellings": [
-        "destination",
-        "recipient",
-        "consignee",
-        "to",
-        "to_address",
-        "deliveryAddress",
-        "address_to",
-        "ship_to"
+        "tracking_number",
+        "trackingNumber",
+        "trackingId",
+        "tracking_code",
+        "trackingNumbers",
+        "masterTrackingNumber"
       ]
     },
     "updated_at": {
@@ -96,18 +110,20 @@
       ],
       "format": "date-time"
     },
-    "tracking_number": {
+    "carrier": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.306,
-      "x-commons-providers": 22,
+      "x-commons-share": 0.278,
+      "x-commons-providers": 20,
       "x-commons-spellings": [
-        "tracking_number",
-        "trackingNumber",
-        "trackingId",
-        "tracking_code",
-        "trackingNumbers",
-        "masterTrackingNumber"
+        "carrier",
+        "courier",
+        "carrierName",
+        "carrierCode",
+        "carrierId",
+        "slug",
+        "carrier_name",
+        "carrier_id"
       ]
     },
     "parcels": {
@@ -121,22 +137,6 @@
         "packages",
         "parcel",
         "pieces"
-      ]
-    },
-    "carrier": {
-      "type": "string",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.264,
-      "x-commons-providers": 19,
-      "x-commons-spellings": [
-        "carrier",
-        "courier",
-        "carrierName",
-        "carrierCode",
-        "carrierId",
-        "carrier_name",
-        "carrier_id",
-        "carrier_code"
       ]
     }
   },
