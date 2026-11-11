@@ -1,7 +1,7 @@
 provider: back-market
 apis_io: https://apis.io/providers/back-market/
 context: shipping
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   shipment:
     path_segment:

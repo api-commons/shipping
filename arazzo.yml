@@ -1,0 +1,52 @@
+arazzo: 1.0.1
+info:
+  title: Shipping workflows (API Commons)
+  version: 0.1.0-draft.20261111
+  summary: Reference workflows over the common Shipping operations.
+  description: 'Reference compositions of the operations this context''s providers share. Not measured: every step
+    is a core- or extended-tier operation of the common OpenAPI, so the workflow runs against any provider that
+    implements those operations (see crosswalk/).'
+sourceDescriptions:
+- name: shipping
+  url: ./openapi.yml
+  type: openapi
+workflows:
+- workflowId: rate-ship-track
+  summary: Create a shipment, compare rates, buy a label and follow it
+  description: Create a shipment, compare rates, buy a label and follow it.
+  steps:
+  - stepId: shipment
+    operationId: createShipment
+    description: Create a shipment -- a core-tier operation (70% of providers).
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      id: $response.body#/id
+  - stepId: rates
+    operationId: listShippingRates
+    description: List shipping rates -- a extended-tier operation (33% of providers).
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      id: $response.body#/id
+  - stepId: label
+    operationId: createLabel
+    description: Create a label -- a core-tier operation (50% of providers).
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      id: $response.body#/id
+    requestBody:
+      contentType: application/json
+      payload:
+        shipment_id: $steps.shipment.outputs.id
+  - stepId: tracking
+    operationId: listTracking
+    description: List tracking -- a extended-tier operation (42% of providers).
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      id: $response.body#/id
+  x-commons-tiers:
+  - core
+  - extended

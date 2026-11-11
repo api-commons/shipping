@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Shipping (API Commons)
-  version: 0.1.0-draft.20261110
+  version: 0.1.0-draft.20261111
   description: 'The common Shipping interface, distilled from the harvested OpenAPI of 258 providers in the APIs.io
     catalog. Not a product: no one serves this API. It is the shape the market already shares, measured, so that
     providers, agents and integrators can map to one vocabulary. See profile.yml.'
@@ -121,7 +121,7 @@ paths:
           application/json:
             schema: *id002
     get:
-      operationId: listRates
+      operationId: listShippingRates
       summary: List shipping rates
       tags:
       - Rates
@@ -225,7 +225,7 @@ paths:
           application/json:
             schema: *id004
     get:
-      operationId: listTrackings
+      operationId: listTracking
       summary: List tracking
       tags:
       - Trackings

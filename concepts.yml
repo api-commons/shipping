@@ -99,3 +99,12 @@ decisions:
   - "A courier is a carrier only when it is a company: Nash's and Circuit's couriers are drivers."
   - "Tracking is `/tracking` (28 providers), covering trackers, tracks and trackings."
   - "Duplicates merged: Kargo."
+
+workflows:
+  - id: rate-ship-track
+    summary: Create a shipment, compare rates, buy a label and follow it
+    steps:
+      - {op: createShipment, id: shipment}
+      - {op: listShippingRates, id: rates}
+      - {op: createLabel, id: label, link: {shipment_id: "$steps.shipment.outputs.id"}}
+      - {op: listTracking, id: tracking}
