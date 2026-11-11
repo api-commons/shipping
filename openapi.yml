@@ -100,7 +100,7 @@ paths:
         in: query
         schema:
           type: string
-  /rates:
+  /shipping-rates:
     post:
       operationId: createRate
       summary: Create a rate
@@ -122,7 +122,7 @@ paths:
             schema: *id002
     get:
       operationId: listRates
-      summary: List rates
+      summary: List shipping rates
       tags:
       - Rates
       x-commons-tier: extended
@@ -204,7 +204,7 @@ paths:
           content:
             application/json:
               schema: *id003
-  /trackings:
+  /tracking:
     post:
       operationId: createTracking
       summary: Create a tracking
@@ -226,7 +226,7 @@ paths:
             schema: *id004
     get:
       operationId: listTrackings
-      summary: List trackings
+      summary: List tracking
       tags:
       - Trackings
       x-commons-tier: extended
@@ -248,7 +248,7 @@ paths:
         in: query
         schema:
           type: string
-  /trackings/{tracking_id}:
+  /tracking/{tracking_id}:
     parameters:
     - $ref: '#/components/parameters/tracking_id'
     get:

@@ -52,7 +52,7 @@ These are calls, not measurements, recorded so they can be revisited as the meth
 
 - Shipping owns the shipment. Commerce's `/orders/{order_id}/shipments` is the order's view of it.
 - A last-mile delivery (DoorDash Drive, Grab Express, Metrobi) is a shipment: a parcel moved from one address to another.
-- A rate is `/rates` or a quote beneath rates or shipments; bare `quotes` and `estimates` were sales quotes and ride estimates.
+- A rate is `/shipping-rates`, though providers say `rates`: a bare rate is an FX or tax rate in other contexts (the same call as travel's `/rate-plans`). Bare `quotes` and `estimates` were sales quotes and ride estimates and do not count.
 - A courier is a carrier only when it is a company: Nash's and Circuit's couriers are drivers.
 - Tracking is `/tracking` (28 providers), covering trackers, tracks and trackings.
 - Duplicates merged: Kargo.

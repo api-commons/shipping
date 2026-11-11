@@ -33,6 +33,7 @@ concepts:
       estimated_delivery: [eta, estimated_delivery_date, delivery_date, expected_delivery, promised_delivery_date]
   rate:
     requires: [shipment]
+    path: /shipping-rates
     segments: [rates, rate, rate_quotes, shipping_rates, shipping-rates, "quotes@rates|shipping|shipments"]
     aliases:
       transit_days: [delivery_days, estimated_days, days, transit_time, business_days_in_transit, duration_terms]
@@ -46,6 +47,7 @@ concepts:
       shipment_id: [shipment]
       voided: [is_voided, void, voided_at]
   tracking:
+    path: /tracking
     segments: [tracking, trackings, trackers, tracker, track, tracks, tracking_events]
     aliases:
       events: [tracking_events, checkpoints, tracking_details, scans, history, activities, scan_events]
@@ -91,8 +93,9 @@ decisions:
     it."
   - "A last-mile delivery (DoorDash Drive, Grab Express, Metrobi) is a shipment: a parcel moved
     from one address to another."
-  - "A rate is `/rates` or a quote beneath rates or shipments; bare `quotes` and `estimates` were
-    sales quotes and ride estimates."
+  - "A rate is `/shipping-rates`, though providers say `rates`: a bare rate is an FX or tax
+    rate in other contexts (the same call as travel's `/rate-plans`). Bare `quotes` and
+    `estimates` were sales quotes and ride estimates and do not count."
   - "A courier is a carrier only when it is a company: Nash's and Circuit's couriers are drivers."
   - "Tracking is `/tracking` (28 providers), covering trackers, tracks and trackings."
   - "Duplicates merged: Kargo."
