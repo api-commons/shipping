@@ -1,0 +1,15 @@
+provider: avito
+apis_io: https://apis.io/providers/avito/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  tracking:
+    path_segment:
+    - track
+    - tracking
+    properties:
+      status: status
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/avito-delivery-sandbox-openapi.json#POST /delivery-sandbox/announcements/track
+    - openapi/_original/avito-delivery-sandbox-openapi.json#POST /delivery-sandbox/order/tracking

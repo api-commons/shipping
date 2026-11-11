@@ -1,0 +1,20 @@
+provider: newstore
+apis_io: https://apis.io/providers/newstore/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/newstore-api-openapi-original.json#GET /fulfillment/configurations/shipments/{name}
+    - openapi/_original/newstore-api-openapi-original.json#POST /fulfillment/configurations/shipments/{name}
+  label:
+    path_segment:
+    - shipping-labels
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/newstore-api-openapi-original.json#GET /fulfillment/shipping-labels/{public_key}

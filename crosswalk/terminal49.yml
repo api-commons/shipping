@@ -1,0 +1,15 @@
+provider: terminal49
+apis_io: https://apis.io/providers/terminal49/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/terminal49-openapi.yml#GET /shipments
+    - openapi/_original/terminal49-openapi.yml#GET /shipments/{id}
+    - openapi/_original/terminal49-openapi.yml#PATCH /shipments/{id}

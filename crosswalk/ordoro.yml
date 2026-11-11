@@ -1,0 +1,13 @@
+provider: ordoro
+apis_io: https://apis.io/providers/ordoro/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  tracking:
+    path_segment:
+    - tracking
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/ordoro-ordoro-api-openapi.yml#GET /tracking/
+    - openapi/_original/ordoro-ordoro-api-openapi.yml#GET /tracking/{tracking_id}/

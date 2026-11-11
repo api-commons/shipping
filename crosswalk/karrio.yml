@@ -1,0 +1,83 @@
+provider: karrio
+apis_io: https://apis.io/providers/karrio/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      from_address: shipper
+      to_address: recipient
+      updated_at: updated_at
+      tracking_number: tracking_number
+      parcels: parcels
+      carrier:
+      - carrier_name
+      - carrier_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/karrio-openapi.yml#GET /v1/shipments
+    - openapi/_original/karrio-openapi.yml#GET /v1/shipments/{id}
+    - openapi/_original/karrio-openapi.yml#POST /v1/batches/shipments
+    - openapi/_original/karrio-openapi.yml#POST /v1/shipments
+    - openapi/_original/karrio-openapi.yml#PUT /v1/shipments/{id}
+  rate:
+    path_segment:
+    - rates
+    properties:
+      id: id
+      created_at: created_at
+      service: service
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/karrio-openapi.yml#POST /v1/proxy/rates
+    - openapi/_original/karrio-openapi.yml#POST /v1/shipments/{id}/rates
+  tracking:
+    path_segment:
+    - trackers
+    - tracking
+    properties:
+      tracking_number: tracking_number
+      status: status
+      carrier:
+      - carrier_name
+      - carrier_id
+      events: events
+      id: id
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/karrio-openapi.yml#DELETE /v1/trackers/{id_or_tracking_number}
+    - openapi/_original/karrio-openapi.yml#GET /v1/trackers
+    - openapi/_original/karrio-openapi.yml#GET /v1/trackers/{id_or_tracking_number}
+    - openapi/_original/karrio-openapi.yml#POST /v1/batches/trackers
+    - openapi/_original/karrio-openapi.yml#POST /v1/proxy/tracking
+  pickup:
+    path_segment:
+    - pickups
+    properties:
+      id: id
+      pickup_date:
+      - pickup_date
+      - ready_time
+      address: address
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/karrio-openapi.yml#GET /v1/pickups
+    - openapi/_original/karrio-openapi.yml#GET /v1/pickups/{id}
+    - openapi/_original/karrio-openapi.yml#POST /v1/pickups/{id}
+    - openapi/_original/karrio-openapi.yml#POST /v1/proxy/pickups/{carrier_name}
+  carrier:
+    path_segment:
+    - carriers
+    properties:
+      name:
+      - carrier_name
+      - display_name
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/karrio-openapi.yml#GET /v1/carriers

@@ -1,0 +1,25 @@
+provider: tradeverifyd
+apis_io: https://apis.io/providers/tradeverifyd/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    - shipment
+    properties:
+      id:
+      - shipment_id
+      - id
+      status: status
+      created_at: created
+      from_address: origin
+      to_address: destination
+      updated_at: last_modified
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tradeverifyd-openapi-original.json#GET /v1/credentials/list/shipment/{shipment_id}
+    - openapi/_original/tradeverifyd-openapi-original.json#GET /v1/shipments
+    - openapi/_original/tradeverifyd-openapi-original.json#GET /v1/shipments/{shipment_id}
+    - openapi/_original/tradeverifyd-openapi-original.json#POST /v1/shipments
+    - openapi/_original/tradeverifyd-openapi-original.json#PUT /v1/shipments/{shipment_id}

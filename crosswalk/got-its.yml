@@ -1,0 +1,27 @@
+provider: got-its
+apis_io: https://apis.io/providers/got-its/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - consignments
+    properties:
+      id: id
+      to_address: destination
+      parcels: pieces
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/got-its-openapi-original.yml#GET /consignments/{consignmentId}
+    - openapi/_original/got-its-openapi-original.yml#GET /workspaces/{workspaceId}/consignments
+    - openapi/_original/got-its-openapi-original.yml#PATCH /workspaces/{workspaceId}/consignments
+    - openapi/_original/got-its-openapi-original.yml#POST /workspaces/{workspaceId}/consignments
+  label:
+    path_segment:
+    - labels
+    properties:
+      id: id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/got-its-openapi-original.yml#DELETE /assets/{assetId}/labels/{bleId}
+    - openapi/_original/got-its-openapi-original.yml#POST /assets/{assetId}/labels

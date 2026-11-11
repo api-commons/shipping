@@ -1,0 +1,19 @@
+provider: xentral
+apis_io: https://apis.io/providers/xentral/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - deliveries
+    - shipments
+    properties:
+      id: id
+      tracking_number: trackingNumber
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/xentral-api-openapi-original.json#GET /api/v1/deliveries
+    - openapi/_original/xentral-api-openapi-original.json#GET /api/v1/deliveries/{id}
+    - openapi/_original/xentral-api-openapi-original.json#GET /api/v1/deliveryNotes/{id}/deliveries
+    - openapi/_original/xentral-api-openapi-original.json#GET /api/v1/deliveryNotes/{id}/shipments
+    - openapi/_original/xentral-api-openapi-original.json#GET /api/v1/shipments/{id}

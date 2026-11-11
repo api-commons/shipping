@@ -1,0 +1,24 @@
+provider: dsv
+apis_io: https://apis.io/providers/dsv/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/dsv-generic-invoice-demo-v1-openapi.json#GET /invoices/shipments/{shipmentId}
+  label:
+    path_segment:
+    - labels
+    properties:
+      tracking_number:
+      - trackingNumber
+      - awb
+      carrier: carrier
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/dsv-generic-labels-demo-v1-openapi.json#GET /labels/{bookingId}
+    - openapi/_original/dsv-xpress-booking-v2-openapi.json#GET /bookings/labels/{shipmentId}

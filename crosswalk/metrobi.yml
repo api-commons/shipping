@@ -1,0 +1,17 @@
+provider: metrobi
+apis_io: https://apis.io/providers/metrobi/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - delivery
+    properties:
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/metrobi-delivery-api-openapi.json#DELETE /v1/delivery/{delivery_id}
+    - openapi/_original/metrobi-delivery-api-openapi.json#GET /v1/delivery
+    - openapi/_original/metrobi-delivery-api-openapi.json#GET /v1/delivery/{delivery_id}
+    - openapi/_original/metrobi-delivery-api-openapi.json#POST /v1/delivery

@@ -1,0 +1,68 @@
+# Shipping
+
+The common shipping vocabulary -- shipments and the parcels in them, the rates quoted to send them, the labels that send them, the tracking that follows them, the pickups that collect them and the carriers that move them -- distilled from the APIs that already exist. Part of [Schema Commons](https://github.com/api-commons/schema-commons),
+published by the [API Commons](https://apicommons.org).
+
+Built from the providers tagged Shipping, Logistics, Last Mile Delivery, Fulfillment, Delivery, Parcel, Courier, 3PL, Freight in [APIs.io](https://apis.io) that
+publish their own OpenAPI. Only harvested contracts count -- nothing API Evangelist
+generated. Every number below is a count of providers.
+
+## What the market already agrees on
+
+<!-- commons:summary -->
+| Concept | Expose it | Readable schema | Core properties (share) | Collection named |
+| --- | ---: | ---: | --- | --- |
+| shipment | 78 | 72 | id 74%, status 61% | shipments 57, deliveries 15, shipment 10, delivery 5 |
+| rate | 9 | 8 | id 50% | rates 8, rate 1 |
+| label | 20 | 17 |  | labels 14, label 6, shipping-labels 2 |
+| tracking | 40 | 35 | tracking_number 57% | tracking 28, track 7, trackers 4, trackings 4 |
+| pickup | 8 | 6 | id 83%, pickup_date 67%, status 67%, address 50% | pickups 6, pickup 2 |
+| carrier | 16 | 16 | name 75%, id 56% | carriers 11, couriers 1, carrieraccounts 1, carrier 1 |
+
+Cohort: 258 providers with harvested OpenAPI, 99 crosswalks. Of the providers exposing a shipment: 70% create, 60% list, 74% fetch, 35% update, 26% delete. Generated 2026-11-10 by build.py.
+<!-- /commons:summary -->
+
+Shares are of the providers with a readable resource schema for that concept. The
+extended tier and the long tail of every concept are in [profile.yml](profile.yml).
+
+## What the measurement shows
+
+- A shipment agrees only on id and status. From and to addresses sit at 44%: carriers, multi-carrier platforms and last-mile delivery networks each nest the addresses differently.
+- Tracking agrees on the tracking number, and status sits just under (49%); the event history is modelled too differently to share.
+- Labels agree on nothing outright: a label is a file at some providers, a purchase record at others, and part of the shipment at the rest.
+- The carriers themselves are absent: FedEx and USPS have harvested specs without recorded provenance, DHL publishes none the catalog holds, and UPS's versioned action paths do not match. The context is built from multi-carrier platforms and delivery networks.
+
+## Artifacts
+
+- [openapi.yml](openapi.yml) -- OpenAPI 3.1 of the shared operations. No one serves it; it
+  is the shape to map to. Lints clean against the
+  [naming ruleset](https://github.com/api-commons/schema-commons/blob/main/ruleset/schema-commons-naming.yaml).
+- [schema/](schema) -- JSON Schema 2020-12 per concept; each property carries
+  `x-commons-tier`, `x-commons-share`, `x-commons-providers` and the spellings seen.
+- [crosswalk/](crosswalk) -- one per provider, common name -> their name, with the harvested
+  spec and operations each mapping was read from.
+- [adopters.yml](adopters.yml) -- who exposes which concept, linked to their APIs.io page.
+- [concepts.yml](concepts.yml) -- the only hand-written input: concepts, path segments and
+  their qualifiers, aliases, reviewed exclusions, merged duplicates, and the decisions below.
+- [census/](census) -- the cohort and the raw census the profile is built from.
+
+## Decisions
+
+These are calls, not measurements, recorded so they can be revisited as the method matures.
+
+- Shipping owns the shipment. Commerce's `/orders/{order_id}/shipments` is the order's view of it.
+- A last-mile delivery (DoorDash Drive, Grab Express, Metrobi) is a shipment: a parcel moved from one address to another.
+- A rate is `/rates` or a quote beneath rates or shipments; bare `quotes` and `estimates` were sales quotes and ride estimates.
+- A courier is a carrier only when it is a company: Nash's and Circuit's couriers are drivers.
+- Tracking is `/tracking` (28 providers), covering trackers, tracks and trackings.
+- Duplicates merged: Kargo.
+
+## Rebuild
+
+```bash
+../schema-commons/scripts/run.sh .
+```
+
+## License
+
+Artifacts CC BY-NC-SA 4.0 ([LICENSE](LICENSE)); code Apache 2.0 ([LICENSE-CODE](LICENSE-CODE)).

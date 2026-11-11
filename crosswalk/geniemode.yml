@@ -1,0 +1,19 @@
+provider: geniemode
+apis_io: https://apis.io/providers/geniemode/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/geniemode-cataloguing-api-swagger-2.0.json#GET /api/v1/excel/report/queries/possible/shipments/{type}
+    - openapi/_original/geniemode-cataloguing-api-swagger-2.0.json#GET /api/v1/excel/report/shipments
+    - openapi/_original/geniemode-cataloguing-api-swagger-2.0.json#GET /api/v1/logistics/dashboard/shipments
+    - openapi/_original/geniemode-cataloguing-api-swagger-2.0.json#GET /api/v1/order/shipments/{orderId}
+    - openapi/_original/geniemode-cataloguing-api-swagger-2.0.json#POST /api/v1/order/shipments/{orderId}

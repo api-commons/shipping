@@ -1,0 +1,28 @@
+provider: ryder-system
+apis_io: https://apis.io/providers/ryder-system/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: shipmentId
+      status: status
+      created_at: createdAt
+      from_address: origin
+      to_address: destination
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/ryder-tm-shipment-api-openapi.yml#GET /shipments
+    - openapi/_original/ryder-tm-shipment-api-openapi.yml#GET /shipments/{shipmentId}
+    - openapi/_original/ryder-tm-shipment-api-openapi.yml#POST /shipments
+    - openapi/_original/ryder-tm-shipment-api-openapi.yml#PUT /shipments/{shipmentId}
+  tracking:
+    path_segment:
+    - tracking
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ryder-carrier-api-openapi.yml#POST /tracking

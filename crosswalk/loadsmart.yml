@@ -1,0 +1,27 @@
+provider: loadsmart
+apis_io: https://apis.io/providers/loadsmart/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/loadsmart-shipperguide-openapi.yml#DELETE /api/v2/shipments/{shipment_id}
+    - openapi/_original/loadsmart-shipperguide-openapi.yml#GET /api/v2/shipments/{shipment_id}
+  carrier:
+    path_segment:
+    - carrier
+    properties:
+      name: name
+      id: id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/loadsmart-opendock-openapi.yml#GET /carrier
+    - openapi/_original/loadsmart-opendock-openapi.yml#GET /carrier/{id}
+    - openapi/_original/loadsmart-opendock-openapi.yml#GET /metrics/appointment-volume/carrier
+    - openapi/_original/loadsmart-opendock-openapi.yml#POST /carrier
+    - openapi/_original/loadsmart-shipperguide-openapi.yml#DELETE /api/v2/carrier/{driver_id}

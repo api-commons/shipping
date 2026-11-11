@@ -1,0 +1,39 @@
+provider: axlehire
+apis_io: https://apis.io/providers/axlehire/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+      status: status
+      created_at: created
+      from_address: pickup_address
+      tracking_number: tracking_code
+      parcels:
+      - parcels
+      - items
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/axlehire-jitsu-rest-api.yml#GET /v3/assignments/{assignment_id}/shipments
+    - openapi/_original/axlehire-jitsu-rest-api.yml#GET /v3/shipments/{shipment_id}
+    - openapi/_original/axlehire-jitsu-rest-api.yml#POST /v3/shipments
+    - openapi/_original/axlehire-jitsu-rest-api.yml#PUT /v3/shipments/{shipment_id}
+  label:
+    path_segment:
+    - label
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/axlehire-jitsu-rest-api.yml#GET /v3/shipments/{shipment_id}/label
+    - openapi/_original/axlehire-jitsu-rest-api.yml#GET /v3/shipments/{shipment_id}/parcels/label
+    - openapi/_original/axlehire-jitsu-rest-api.yml#GET /v3/shipments/{shipment_id}/parcels/{jitsu_parcel_id}/label
+  tracking:
+    path_segment:
+    - tracking
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/axlehire-jitsu-rest-api.yml#GET /v3/tracking/{tracking_code}

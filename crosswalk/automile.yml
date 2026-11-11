@@ -1,0 +1,12 @@
+provider: automile
+apis_io: https://apis.io/providers/automile/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  tracking:
+    path_segment:
+    - track
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/automile-openapi-original.json#PUT /v1/resourceowner/trackedasset/{trackedAssetId}/track

@@ -1,0 +1,12 @@
+provider: augment
+apis_io: https://apis.io/providers/augment/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  tracking:
+    path_segment:
+    - tracking
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/augment-openapi.json#POST /v2/loads/tracking

@@ -1,0 +1,41 @@
+provider: 99-minutos
+apis_io: https://apis.io/providers/99-minutos/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+      from_address:
+      - sender
+      - origin
+      to_address:
+      - recipient
+      - destination
+      tracking_number: trackingId
+      parcels: items
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/99minutos-api-v3-openapi.json#DELETE /api/v3/shipments/{id}
+    - openapi/_original/99minutos-api-v3-openapi.json#GET /api/v3/shipments/{id}
+    - openapi/_original/99minutos-api-v3-openapi.json#PATCH /api/v3/shipments/{id}
+  rate:
+    path_segment:
+    - rates
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/99minutos-api-v3-openapi.json#POST /api/v3/shipping/rates
+  tracking:
+    path_segment:
+    - tracking
+    properties:
+      tracking_number: trackingId
+      events: events
+      created_at: createdAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/99minutos-api-v3-openapi.json#GET /api/v3/shipments/tracking
+    - openapi/_original/99minutos-api-v3-openapi.json#GET /api/v3/shipments/tracking/batch

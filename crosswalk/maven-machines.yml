@@ -1,0 +1,16 @@
+provider: maven-machines
+apis_io: https://apis.io/providers/maven-machines/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipment
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/maven-machines-aaa-cooper-middleware-openapi.json#POST /shipment
+    - openapi/_original/maven-machines-averitt-middleware-openapi.json#POST /shipment
+    - openapi/_original/maven-machines-planning-and-dispatch-openapi.json#POST /shipment
+    - openapi/_original/maven-machines-reddy-ice-middleware-openapi.json#POST /shipment
+    - openapi/_original/maven-machines-roy-miller-middleware-openapi.json#POST /shipment

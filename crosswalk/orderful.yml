@@ -1,0 +1,23 @@
+provider: orderful
+apis_io: https://apis.io/providers/orderful/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - deliveries
+    properties:
+      status: status
+      created_at: createdAt
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/orderful-openapi-original.yml#GET /transactions/{transactionId}/deliveries/{deliveryId}
+  label:
+    path_segment:
+    - labels
+    properties:
+      carrier: carrier
+      shipment_id: shipment
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/orderful-openapi-original.yml#POST /v3/labels

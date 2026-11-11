@@ -1,0 +1,36 @@
+provider: instacart
+apis_io: https://apis.io/providers/instacart/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - delivery
+    properties:
+      id: id
+      status:
+      - state
+      - status
+      created_at: created_at
+      to_address: delivery_address
+      parcels: items
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/instacart-connect-fulfillment-api-openapi.yml#POST /v2/fulfillment/stores/delivery
+    - openapi/_original/instacart-connect-fulfillment-api-openapi.yml#POST /v2/fulfillment/users/{user_id}/orders/delivery
+    - openapi/_original/instacart-connect-fulfillment-api-openapi.yml#POST /v2/fulfillment/users/{user_id}/service_options/delivery
+  pickup:
+    path_segment:
+    - pickup
+    properties:
+      id: id
+      pickup_date: date
+      status:
+      - state
+      - status
+      address: address
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/instacart-connect-fulfillment-api-openapi.yml#POST /v2/fulfillment/stores/pickup
+    - openapi/_original/instacart-connect-fulfillment-api-openapi.yml#POST /v2/fulfillment/users/{user_id}/orders/pickup
+    - openapi/_original/instacart-connect-fulfillment-api-openapi.yml#POST /v2/fulfillment/users/{user_id}/service_options/pickup

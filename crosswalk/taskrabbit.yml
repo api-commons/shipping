@@ -1,0 +1,12 @@
+provider: taskrabbit
+apis_io: https://apis.io/providers/taskrabbit/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - deliveries
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/taskrabbit-openapi.yml#POST /deliveries

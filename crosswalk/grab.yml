@@ -1,0 +1,18 @@
+provider: grab
+apis_io: https://apis.io/providers/grab/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - deliveries
+    properties:
+      status: status
+      from_address: origin
+      to_address: destination
+      parcels: packages
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/grab-openapi.yml#DELETE /grab-express-sandbox/v1/deliveries/{deliveryID}
+    - openapi/_original/grab-openapi.yml#GET /grab-express-sandbox/v1/deliveries/{deliveryID}
+    - openapi/_original/grab-openapi.yml#POST /grab-express-sandbox/v1/deliveries

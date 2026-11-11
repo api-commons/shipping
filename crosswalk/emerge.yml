@@ -1,0 +1,14 @@
+provider: emerge
+apis_io: https://apis.io/providers/emerge/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/emerge-public-api-openapi.json#GET /shipments/{shipment_id}
+    - openapi/_original/emerge-public-api-openapi.yml#GET /shipments/{shipment_id}

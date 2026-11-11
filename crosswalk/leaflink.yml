@@ -1,0 +1,18 @@
+provider: leaflink
+apis_io: https://apis.io/providers/leaflink/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - deliveries
+    properties:
+      status: status
+      created_at: created_on
+      from_address: pickup_address
+      to_address: destination
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/leaflink-api-openapi-original.yml#GET /deliveries
+    - openapi/_original/leaflink-api-openapi-original.yml#GET /deliveries/{id}
+    - openapi/_original/leaflink-api-openapi-original.yml#POST /deliveries

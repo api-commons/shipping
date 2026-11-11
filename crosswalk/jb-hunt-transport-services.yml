@@ -1,0 +1,14 @@
+provider: jb-hunt-transport-services
+apis_io: https://apis.io/providers/jb-hunt-transport-services/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  tracking:
+    path_segment:
+    - tracking
+    properties:
+      status: status
+      id: shipmentId
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/jb-hunt-360-connect-api.yml#GET /tracking/{shipmentId}

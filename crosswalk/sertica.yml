@@ -1,0 +1,49 @@
+provider: sertica
+apis_io: https://apis.io/providers/sertica/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: guid
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/sertica-web-api-openapi-original.json#DELETE /Shipments/{shipmentNo}
+    - openapi/_original/sertica-web-api-openapi-original.json#GET /Carriers/{carrierNo}/shipments
+    - openapi/_original/sertica-web-api-openapi-original.json#GET /Shipments
+    - openapi/_original/sertica-web-api-openapi-original.json#GET /Shipments/{shipmentNo}
+    - openapi/_original/sertica-web-api-openapi-original.json#POST /Shipments
+  rate:
+    path_segment:
+    - rates
+    properties:
+      id: guid
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/sertica-web-api-openapi-original.json#GET /Currencies/{currencyNo}/rates
+  label:
+    path_segment:
+    - labels
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/sertica-web-api-openapi-original.json#POST /Carriers/labels/{labelTemplateDocumentNo}
+    - openapi/_original/sertica-web-api-openapi-original.json#POST /Components/labels/{labelTemplateDocumentNo}
+    - openapi/_original/sertica-web-api-openapi-original.json#POST /Counters/labels/{documentNo}
+    - openapi/_original/sertica-web-api-openapi-original.json#POST /ItemLocations/labels/{documentNo}
+    - openapi/_original/sertica-web-api-openapi-original.json#POST /Items/labels/{documentNo}
+  carrier:
+    path_segment:
+    - carriers
+    properties:
+      id: guid
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/sertica-web-api-openapi-original.json#DELETE /Carriers/{carrierNo}
+    - openapi/_original/sertica-web-api-openapi-original.json#GET /Carriers
+    - openapi/_original/sertica-web-api-openapi-original.json#GET /Carriers/{carrierNo}
+    - openapi/_original/sertica-web-api-openapi-original.json#GET /Shipments/{shipmentNo}/markings/{markingNo}/carriers
+    - openapi/_original/sertica-web-api-openapi-original.json#GET /UnitShipments/{shipmentNo}/markings/{markingNo}/carriers

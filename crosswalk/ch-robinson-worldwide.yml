@@ -1,0 +1,28 @@
+provider: ch-robinson-worldwide
+apis_io: https://apis.io/providers/ch-robinson-worldwide/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      tracking_number: trackingNumber
+      carrier: carrierName
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ch-robinson-worldwide-openapi.yml#DELETE /v2/visibility/shipments/{shipmentNumber}
+    - openapi/_original/ch-robinson-worldwide-openapi.yml#GET /v2/visibility/shipments
+    - openapi/_original/ch-robinson-worldwide-openapi.yml#POST /v2/visibility/shipments
+    - openapi/_original/ch-robinson-worldwide-rest-apis-openapi.yml#DELETE /v2/visibility/shipments/{shipmentNumber}
+    - openapi/_original/ch-robinson-worldwide-rest-apis-openapi.yml#GET /v2/visibility/shipments
+  label:
+    path_segment:
+    - labels
+    properties:
+      service: serviceLevel
+      carrier: carrier
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ch-robinson-worldwide-openapi.yml#POST /v1/labels
+    - openapi/_original/ch-robinson-worldwide-rest-apis-openapi.yml#POST /v1/labels

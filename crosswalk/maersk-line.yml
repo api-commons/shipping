@@ -1,0 +1,12 @@
+provider: maersk-line
+apis_io: https://apis.io/providers/maersk-line/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/maersk-track-and-trace-api-openapi.yml#GET /track-and-trace-private/shipments

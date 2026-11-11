@@ -1,0 +1,13 @@
+provider: smklog-com
+apis_io: https://apis.io/providers/smklog-com/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  tracking:
+    path_segment:
+    - tracking
+    properties:
+      events: events
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/smklog-com-quote-api-openapi.json#GET /tracking/{tracking_number}

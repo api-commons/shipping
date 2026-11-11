@@ -1,0 +1,18 @@
+provider: cloudkitchens
+apis_io: https://apis.io/providers/cloudkitchens/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    - delivery
+    properties:
+      id: id
+      to_address: destination
+      carrier: courier
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/cloudkitchens-public-api-openapi.yml#GET /inventories/v1/shipments
+    - openapi/_original/cloudkitchens-public-api-openapi.yml#POST /inventories/v1/shipments
+    - openapi/_original/cloudkitchens-public-api-openapi.yml#PUT /v1/orders/{orderId}/delivery

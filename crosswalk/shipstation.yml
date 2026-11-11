@@ -1,0 +1,21 @@
+provider: shipstation
+apis_io: https://apis.io/providers/shipstation/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/shipstation-v1-openapi.yml#GET /shipments
+  carrier:
+    path_segment:
+    - carriers
+    properties:
+      name: name
+      code: code
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/shipstation-v1-openapi.yml#GET /carriers

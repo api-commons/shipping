@@ -1,0 +1,15 @@
+provider: signsealship
+apis_io: https://apis.io/providers/signsealship/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - deliveries
+    properties:
+      status: state
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/signsealship-partner-api-openapi.json#GET /api/partner/webhooks/deliveries
+    - openapi/_original/signsealship-partner-api-openapi.json#GET /api/partner/webhooks/deliveries/{deliveryId}
+    - openapi/_original/signsealship-partner-api-openapi.json#GET /api/partner/webhooks/{id}/deliveries

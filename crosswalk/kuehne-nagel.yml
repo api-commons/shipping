@@ -1,0 +1,17 @@
+provider: kuehne-nagel
+apis_io: https://apis.io/providers/kuehne-nagel/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: shipmentId
+      tracking_number: trackingNumber
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/kuehne-nagel-external-shipment-integration-v1-openapi.json#DELETE /customers/{customerCode}/shipments/{shipmentNumber}
+    - openapi/_original/kuehne-nagel-external-shipment-integration-v1-openapi.json#PUT /customers/{customerCode}/shipments/{shipmentNumber}
+    - openapi/_original/kuehne-nagel-shipment-tracking-v2-openapi.json#GET /shipments
+    - openapi/_original/kuehne-nagel-shipment-tracking-v2-openapi.json#GET /shipments/{uniqueShipmentReference}

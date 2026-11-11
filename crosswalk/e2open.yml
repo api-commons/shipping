@@ -1,0 +1,14 @@
+provider: e2open
+apis_io: https://apis.io/providers/e2open/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  tracking:
+    path_segment:
+    - tracking
+    properties:
+      status: status
+      events: events
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/inttra-ocean-execution-openapi.yml#GET /tracking/{containerNumber}

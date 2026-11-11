@@ -1,0 +1,41 @@
+provider: mvmnt
+apis_io: https://apis.io/providers/mvmnt/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/mvmnt-openapi-original.yml#DELETE /shipments/{id}
+    - openapi/_original/mvmnt-openapi-original.yml#GET /shipments/{id}
+    - openapi/_original/mvmnt-openapi-original.yml#PATCH /shipments/{id}
+    - openapi/_original/mvmnt-openapi-original.yml#POST /shipments
+  tracking:
+    path_segment:
+    - track
+    properties:
+      status: status
+      id: id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/mvmnt-openapi-original.yml#POST /shipments/track
+  carrier:
+    path_segment:
+    - carriers
+    properties:
+      name: name
+      id: id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/mvmnt-openapi-original.yml#DELETE /carriers/{id}
+    - openapi/_original/mvmnt-openapi-original.yml#GET /carriers/{id}
+    - openapi/_original/mvmnt-openapi-original.yml#GET /loads/{loadId}/carriers/{carrierId}
+    - openapi/_original/mvmnt-openapi-original.yml#PATCH /carriers/{id}
+    - openapi/_original/mvmnt-openapi-original.yml#PATCH /loads/{loadId}/carriers/{carrierId}

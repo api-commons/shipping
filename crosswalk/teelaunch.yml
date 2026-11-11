@@ -1,0 +1,14 @@
+provider: teelaunch
+apis_io: https://apis.io/providers/teelaunch/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/teelaunch-openapi.yml#GET /orders/line-item/{id}/shipments
+    - openapi/_original/teelaunch-openapi.yml#GET /orders/platform/{id}/shipments
+    - openapi/_original/teelaunch-openapi.yml#GET /orders/{id}/shipments

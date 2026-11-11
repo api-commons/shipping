@@ -1,0 +1,570 @@
+context: shipping
+generated: '2026-11-10'
+adopters:
+- provider: 99-minutos
+  apis_io: https://apis.io/providers/99-minutos/
+  crosswalk: crosswalk/99-minutos.yml
+  concepts:
+  - rate
+  - shipment
+  - tracking
+- provider: aftership
+  apis_io: https://apis.io/providers/aftership/
+  crosswalk: crosswalk/aftership.yml
+  concepts:
+  - carrier
+  - label
+  - pickup
+  - rate
+  - shipment
+- provider: amazon-seller-central
+  apis_io: https://apis.io/providers/amazon-seller-central/
+  crosswalk: crosswalk/amazon-seller-central.yml
+  concepts:
+  - carrier
+  - label
+  - rate
+  - shipment
+  - tracking
+- provider: ankorstore
+  apis_io: https://apis.io/providers/ankorstore/
+  crosswalk: crosswalk/ankorstore.yml
+  concepts:
+  - tracking
+- provider: augment
+  apis_io: https://apis.io/providers/augment/
+  crosswalk: crosswalk/augment.yml
+  concepts:
+  - tracking
+- provider: automated-sorting-systems
+  apis_io: https://apis.io/providers/automated-sorting-systems/
+  crosswalk: crosswalk/automated-sorting-systems.yml
+  concepts:
+  - tracking
+- provider: automile
+  apis_io: https://apis.io/providers/automile/
+  crosswalk: crosswalk/automile.yml
+  concepts:
+  - tracking
+- provider: avito
+  apis_io: https://apis.io/providers/avito/
+  crosswalk: crosswalk/avito.yml
+  concepts:
+  - tracking
+- provider: axlehire
+  apis_io: https://apis.io/providers/axlehire/
+  crosswalk: crosswalk/axlehire.yml
+  concepts:
+  - label
+  - shipment
+  - tracking
+- provider: back-market
+  apis_io: https://apis.io/providers/back-market/
+  crosswalk: crosswalk/back-market.yml
+  concepts:
+  - shipment
+- provider: boxc
+  apis_io: https://apis.io/providers/boxc/
+  crosswalk: crosswalk/boxc.yml
+  concepts:
+  - label
+  - shipment
+  - tracking
+- provider: byrd
+  apis_io: https://apis.io/providers/byrd/
+  crosswalk: crosswalk/byrd.yml
+  concepts:
+  - shipment
+- provider: cargoai
+  apis_io: https://apis.io/providers/cargoai/
+  crosswalk: crosswalk/cargoai.yml
+  concepts:
+  - shipment
+  - tracking
+- provider: cargomatic
+  apis_io: https://apis.io/providers/cargomatic/
+  crosswalk: crosswalk/cargomatic.yml
+  concepts:
+  - shipment
+- provider: cargosmart
+  apis_io: https://apis.io/providers/cargosmart/
+  crosswalk: crosswalk/cargosmart.yml
+  concepts:
+  - shipment
+- provider: ch-robinson-worldwide
+  apis_io: https://apis.io/providers/ch-robinson-worldwide/
+  crosswalk: crosswalk/ch-robinson-worldwide.yml
+  concepts:
+  - label
+  - shipment
+- provider: cloudkitchens
+  apis_io: https://apis.io/providers/cloudkitchens/
+  crosswalk: crosswalk/cloudkitchens.yml
+  concepts:
+  - shipment
+- provider: dat-freight
+  apis_io: https://apis.io/providers/dat-freight/
+  crosswalk: crosswalk/dat-freight.yml
+  concepts:
+  - shipment
+- provider: doordash
+  apis_io: https://apis.io/providers/doordash/
+  crosswalk: crosswalk/doordash.yml
+  concepts:
+  - label
+  - shipment
+- provider: dpd-group
+  apis_io: https://apis.io/providers/dpd-group/
+  crosswalk: crosswalk/dpd-group.yml
+  concepts:
+  - label
+  - shipment
+  - tracking
+- provider: dsv
+  apis_io: https://apis.io/providers/dsv/
+  crosswalk: crosswalk/dsv.yml
+  concepts:
+  - label
+  - shipment
+- provider: e2open
+  apis_io: https://apis.io/providers/e2open/
+  crosswalk: crosswalk/e2open.yml
+  concepts:
+  - tracking
+- provider: easypost
+  apis_io: https://apis.io/providers/easypost/
+  crosswalk: crosswalk/easypost.yml
+  concepts:
+  - label
+  - shipment
+  - tracking
+- provider: easyship
+  apis_io: https://apis.io/providers/easyship/
+  crosswalk: crosswalk/easyship.yml
+  concepts:
+  - label
+  - pickup
+  - rate
+  - shipment
+  - tracking
+- provider: echo-global
+  apis_io: https://apis.io/providers/echo-global/
+  crosswalk: crosswalk/echo-global.yml
+  concepts:
+  - shipment
+  - tracking
+- provider: eci-solutions
+  apis_io: https://apis.io/providers/eci-solutions/
+  crosswalk: crosswalk/eci-solutions.yml
+  concepts:
+  - carrier
+  - shipment
+- provider: einride
+  apis_io: https://apis.io/providers/einride/
+  crosswalk: crosswalk/einride.yml
+  concepts:
+  - shipment
+- provider: emerge
+  apis_io: https://apis.io/providers/emerge/
+  crosswalk: crosswalk/emerge.yml
+  concepts:
+  - shipment
+- provider: etsy
+  apis_io: https://apis.io/providers/etsy/
+  crosswalk: crosswalk/etsy.yml
+  concepts:
+  - tracking
+- provider: fleetbase
+  apis_io: https://apis.io/providers/fleetbase/
+  crosswalk: crosswalk/fleetbase.yml
+  concepts:
+  - tracking
+- provider: geniemode
+  apis_io: https://apis.io/providers/geniemode/
+  crosswalk: crosswalk/geniemode.yml
+  concepts:
+  - shipment
+- provider: got-its
+  apis_io: https://apis.io/providers/got-its/
+  crosswalk: crosswalk/got-its.yml
+  concepts:
+  - label
+  - shipment
+- provider: grab
+  apis_io: https://apis.io/providers/grab/
+  crosswalk: crosswalk/grab.yml
+  concepts:
+  - shipment
+- provider: grubhub
+  apis_io: https://apis.io/providers/grubhub/
+  crosswalk: crosswalk/grubhub.yml
+  concepts:
+  - pickup
+  - shipment
+- provider: hypertrack
+  apis_io: https://apis.io/providers/hypertrack/
+  crosswalk: crosswalk/hypertrack.yml
+  concepts:
+  - tracking
+- provider: instacart
+  apis_io: https://apis.io/providers/instacart/
+  crosswalk: crosswalk/instacart.yml
+  concepts:
+  - pickup
+  - shipment
+- provider: jb-hunt-transport-services
+  apis_io: https://apis.io/providers/jb-hunt-transport-services/
+  crosswalk: crosswalk/jb-hunt-transport-services.yml
+  concepts:
+  - tracking
+- provider: karrio
+  apis_io: https://apis.io/providers/karrio/
+  crosswalk: crosswalk/karrio.yml
+  concepts:
+  - carrier
+  - pickup
+  - rate
+  - shipment
+  - tracking
+- provider: kibo-commerce
+  apis_io: https://apis.io/providers/kibo-commerce/
+  crosswalk: crosswalk/kibo-commerce.yml
+  concepts:
+  - carrier
+  - label
+  - pickup
+  - shipment
+  - tracking
+- provider: kuehne-nagel
+  apis_io: https://apis.io/providers/kuehne-nagel/
+  crosswalk: crosswalk/kuehne-nagel.yml
+  concepts:
+  - shipment
+- provider: kurly
+  apis_io: https://apis.io/providers/kurly/
+  crosswalk: crosswalk/kurly.yml
+  concepts:
+  - tracking
+- provider: leaflink
+  apis_io: https://apis.io/providers/leaflink/
+  crosswalk: crosswalk/leaflink.yml
+  concepts:
+  - shipment
+- provider: loadsmart
+  apis_io: https://apis.io/providers/loadsmart/
+  crosswalk: crosswalk/loadsmart.yml
+  concepts:
+  - carrier
+  - shipment
+- provider: loggi
+  apis_io: https://apis.io/providers/loggi/
+  crosswalk: crosswalk/loggi.yml
+  concepts:
+  - tracking
+- provider: maersk-line
+  apis_io: https://apis.io/providers/maersk-line/
+  crosswalk: crosswalk/maersk-line.yml
+  concepts:
+  - shipment
+- provider: magaya
+  apis_io: https://apis.io/providers/magaya/
+  crosswalk: crosswalk/magaya.yml
+  concepts:
+  - shipment
+- provider: maven-machines
+  apis_io: https://apis.io/providers/maven-machines/
+  crosswalk: crosswalk/maven-machines.yml
+  concepts:
+  - shipment
+- provider: metrobi
+  apis_io: https://apis.io/providers/metrobi/
+  crosswalk: crosswalk/metrobi.yml
+  concepts:
+  - shipment
+- provider: mvmnt
+  apis_io: https://apis.io/providers/mvmnt/
+  crosswalk: crosswalk/mvmnt.yml
+  concepts:
+  - carrier
+  - shipment
+  - tracking
+- provider: mycarrier
+  apis_io: https://apis.io/providers/mycarrier/
+  crosswalk: crosswalk/mycarrier.yml
+  concepts:
+  - rate
+  - shipment
+- provider: nash
+  apis_io: https://apis.io/providers/nash/
+  crosswalk: crosswalk/nash.yml
+  concepts:
+  - shipment
+- provider: newstore
+  apis_io: https://apis.io/providers/newstore/
+  crosswalk: crosswalk/newstore.yml
+  concepts:
+  - label
+  - shipment
+- provider: omniful-inc
+  apis_io: https://apis.io/providers/omniful-inc/
+  crosswalk: crosswalk/omniful-inc.yml
+  concepts:
+  - shipment
+- provider: onerail
+  apis_io: https://apis.io/providers/onerail/
+  crosswalk: crosswalk/onerail.yml
+  concepts:
+  - carrier
+  - label
+  - shipment
+- provider: optoro
+  apis_io: https://apis.io/providers/optoro/
+  crosswalk: crosswalk/optoro.yml
+  concepts:
+  - shipment
+- provider: orderdesk
+  apis_io: https://apis.io/providers/orderdesk/
+  crosswalk: crosswalk/orderdesk.yml
+  concepts:
+  - shipment
+- provider: orderful
+  apis_io: https://apis.io/providers/orderful/
+  crosswalk: crosswalk/orderful.yml
+  concepts:
+  - label
+  - shipment
+- provider: ordoro
+  apis_io: https://apis.io/providers/ordoro/
+  crosswalk: crosswalk/ordoro.yml
+  concepts:
+  - tracking
+- provider: packagex
+  apis_io: https://apis.io/providers/packagex/
+  crosswalk: crosswalk/packagex.yml
+  concepts:
+  - shipment
+- provider: parcelperform
+  apis_io: https://apis.io/providers/parcelperform/
+  crosswalk: crosswalk/parcelperform.yml
+  concepts:
+  - carrier
+  - shipment
+- provider: parcelsapp
+  apis_io: https://apis.io/providers/parcelsapp/
+  crosswalk: crosswalk/parcelsapp.yml
+  concepts:
+  - tracking
+- provider: pitney-bowes
+  apis_io: https://apis.io/providers/pitney-bowes/
+  crosswalk: crosswalk/pitney-bowes.yml
+  concepts:
+  - pickup
+  - rate
+  - shipment
+  - tracking
+- provider: portbase
+  apis_io: https://apis.io/providers/portbase/
+  crosswalk: crosswalk/portbase.yml
+  concepts:
+  - shipment
+- provider: project44
+  apis_io: https://apis.io/providers/project44/
+  crosswalk: crosswalk/project44.yml
+  concepts:
+  - shipment
+- provider: ryder-system
+  apis_io: https://apis.io/providers/ryder-system/
+  crosswalk: crosswalk/ryder-system.yml
+  concepts:
+  - shipment
+  - tracking
+- provider: sendcloud
+  apis_io: https://apis.io/providers/sendcloud/
+  crosswalk: crosswalk/sendcloud.yml
+  concepts:
+  - carrier
+  - label
+  - shipment
+  - tracking
+- provider: sertica
+  apis_io: https://apis.io/providers/sertica/
+  crosswalk: crosswalk/sertica.yml
+  concepts:
+  - carrier
+  - label
+  - rate
+  - shipment
+- provider: ship24
+  apis_io: https://apis.io/providers/ship24/
+  crosswalk: crosswalk/ship24.yml
+  concepts:
+  - tracking
+- provider: shipbob
+  apis_io: https://apis.io/providers/shipbob/
+  crosswalk: crosswalk/shipbob.yml
+  concepts:
+  - label
+  - shipment
+- provider: shipcloud
+  apis_io: https://apis.io/providers/shipcloud/
+  crosswalk: crosswalk/shipcloud.yml
+  concepts:
+  - carrier
+  - shipment
+  - tracking
+- provider: shippit
+  apis_io: https://apis.io/providers/shippit/
+  crosswalk: crosswalk/shippit.yml
+  concepts:
+  - tracking
+- provider: shippo
+  apis_io: https://apis.io/providers/shippo/
+  crosswalk: crosswalk/shippo.yml
+  concepts:
+  - carrier
+  - rate
+  - shipment
+  - tracking
+- provider: shipstation
+  apis_io: https://apis.io/providers/shipstation/
+  crosswalk: crosswalk/shipstation.yml
+  concepts:
+  - carrier
+  - shipment
+- provider: shopgo
+  apis_io: https://apis.io/providers/shopgo/
+  crosswalk: crosswalk/shopgo.yml
+  concepts:
+  - shipment
+- provider: signsealship
+  apis_io: https://apis.io/providers/signsealship/
+  crosswalk: crosswalk/signsealship.yml
+  concepts:
+  - shipment
+- provider: skydropx
+  apis_io: https://apis.io/providers/skydropx/
+  crosswalk: crosswalk/skydropx.yml
+  concepts:
+  - label
+  - pickup
+  - shipment
+  - tracking
+- provider: smklog-com
+  apis_io: https://apis.io/providers/smklog-com/
+  crosswalk: crosswalk/smklog-com.yml
+  concepts:
+  - tracking
+- provider: spod
+  apis_io: https://apis.io/providers/spod/
+  crosswalk: crosswalk/spod.yml
+  concepts:
+  - shipment
+- provider: spreadshirt
+  apis_io: https://apis.io/providers/spreadshirt/
+  crosswalk: crosswalk/spreadshirt.yml
+  concepts:
+  - shipment
+- provider: taskrabbit
+  apis_io: https://apis.io/providers/taskrabbit/
+  crosswalk: crosswalk/taskrabbit.yml
+  concepts:
+  - shipment
+- provider: teelaunch
+  apis_io: https://apis.io/providers/teelaunch/
+  crosswalk: crosswalk/teelaunch.yml
+  concepts:
+  - shipment
+- provider: terminal49
+  apis_io: https://apis.io/providers/terminal49/
+  crosswalk: crosswalk/terminal49.yml
+  concepts:
+  - shipment
+- provider: tive
+  apis_io: https://apis.io/providers/tive/
+  crosswalk: crosswalk/tive.yml
+  concepts:
+  - shipment
+- provider: trabex
+  apis_io: https://apis.io/providers/trabex/
+  crosswalk: crosswalk/trabex.yml
+  concepts:
+  - shipment
+- provider: trackingmore
+  apis_io: https://apis.io/providers/trackingmore/
+  crosswalk: crosswalk/trackingmore.yml
+  concepts:
+  - tracking
+- provider: tradeverifyd
+  apis_io: https://apis.io/providers/tradeverifyd/
+  crosswalk: crosswalk/tradeverifyd.yml
+  concepts:
+  - shipment
+- provider: transload
+  apis_io: https://apis.io/providers/transload/
+  crosswalk: crosswalk/transload.yml
+  concepts:
+  - shipment
+- provider: turvo
+  apis_io: https://apis.io/providers/turvo/
+  crosswalk: crosswalk/turvo.yml
+  concepts:
+  - carrier
+  - shipment
+- provider: uber
+  apis_io: https://apis.io/providers/uber/
+  crosswalk: crosswalk/uber.yml
+  concepts:
+  - shipment
+- provider: uber-direct
+  apis_io: https://apis.io/providers/uber-direct/
+  crosswalk: crosswalk/uber-direct.yml
+  concepts:
+  - shipment
+- provider: uber-eats
+  apis_io: https://apis.io/providers/uber-eats/
+  crosswalk: crosswalk/uber-eats.yml
+  concepts:
+  - shipment
+- provider: uniuni
+  apis_io: https://apis.io/providers/uniuni/
+  crosswalk: crosswalk/uniuni.yml
+  concepts:
+  - label
+  - shipment
+  - tracking
+- provider: veho
+  apis_io: https://apis.io/providers/veho/
+  crosswalk: crosswalk/veho.yml
+  concepts:
+  - tracking
+- provider: virto-commerce
+  apis_io: https://apis.io/providers/virto-commerce/
+  crosswalk: crosswalk/virto-commerce.yml
+  concepts:
+  - shipment
+- provider: vooma
+  apis_io: https://apis.io/providers/vooma/
+  crosswalk: crosswalk/vooma.yml
+  concepts:
+  - carrier
+  - shipment
+- provider: walmart
+  apis_io: https://apis.io/providers/walmart/
+  crosswalk: crosswalk/walmart.yml
+  concepts:
+  - tracking
+- provider: wish
+  apis_io: https://apis.io/providers/wish/
+  crosswalk: crosswalk/wish.yml
+  concepts:
+  - tracking
+- provider: xentral
+  apis_io: https://apis.io/providers/xentral/
+  crosswalk: crosswalk/xentral.yml
+  concepts:
+  - shipment
+- provider: zalando
+  apis_io: https://apis.io/providers/zalando/
+  crosswalk: crosswalk/zalando.yml
+  concepts:
+  - shipment

@@ -1,0 +1,12 @@
+provider: spod
+apis_io: https://apis.io/providers/spod/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/spod-openapi.yml#GET /orders/{orderId}/shipments

@@ -1,0 +1,98 @@
+context: shipping
+name: Shipping
+intro: >-
+  The common shipping vocabulary -- shipments and the parcels in them, the rates quoted to
+  send them, the labels that send them, the tracking that follows them, the pickups that
+  collect them and the carriers that move them -- distilled from the APIs that already exist.
+tags: [Shipping, Logistics, Last Mile Delivery, Fulfillment, Delivery, Parcel, Courier, 3PL, Freight]
+
+envelope: [_links, _pagination, _results, data, success, errors, warnings, count, total, page, meta, links,
+           value, results, next, previous, has_more, message, status_code, ids, next_page, previous_page,
+           page_info, cursor, total_count, per_page, total_pages, current_page, object, url, output, transactionId]
+
+common_fields:
+  id: [uuid, guid, object_id, record_id, shipment_id, label_id]
+  created_at: [created, created_date, date_created, create_time, creation_date, created_on, object_created]
+  updated_at: [updated, updated_date, modified_at, last_modified, date_modified, update_time, modified_date, modified, object_updated]
+  metadata: [meta_data, custom_fields, custom, attributes, properties, reference, references, customer_reference]
+  status: [state, shipment_status, label_status, tracking_status, status_code]
+  carrier: [carrier_code, carrier_id, carrier_name, provider, courier, courier_code, slug, carrier_account]
+  service: [service_code, service_level, service_type, servicelevel, service_name, mail_class]
+  tracking_number: [tracking_code, tracking_id, tracking_numbers, awb, waybill, awb_number, master_tracking_number]
+  currency: [currency_code]
+  amount: [price, rate, total, total_charge, cost, total_amount, shipping_amount, total_net_charge]
+
+concepts:
+  shipment:
+    segments: [shipments, shipment, consignments, consignment, deliveries, delivery, jobs@delivery|courier]
+    aliases:
+      from_address: [address_from, ship_from, shipper, sender, origin, from, pickup_address, sender_address]
+      to_address: [address_to, ship_to, recipient, receiver, destination, to, delivery_address, consignee]
+      parcels: [packages, parcel, pieces, items, requested_package_line_items, boxes]
+      ship_date: [shipping_date, shipped_at, pickup_date, ship_timestamp]
+      estimated_delivery: [eta, estimated_delivery_date, delivery_date, expected_delivery, promised_delivery_date]
+  rate:
+    requires: [shipment]
+    segments: [rates, rate, rate_quotes, shipping_rates, shipping-rates, "quotes@rates|shipping|shipments"]
+    aliases:
+      transit_days: [delivery_days, estimated_days, days, transit_time, business_days_in_transit, duration_terms]
+      shipment_id: [shipment]
+  label:
+    requires: [shipment]
+    segments: [labels, label, shipping_labels, shipping-labels, transactions@shipments|labels]
+    aliases:
+      label_url: [url, label_download, pdf_url, label_file, file, document, label_data, image]
+      label_format: [format, file_type, label_file_type, label_type]
+      shipment_id: [shipment]
+      voided: [is_voided, void, voided_at]
+  tracking:
+    segments: [tracking, trackings, trackers, tracker, track, tracks, tracking_events]
+    aliases:
+      events: [tracking_events, checkpoints, tracking_details, scans, history, activities, scan_events]
+      estimated_delivery: [eta, estimated_delivery_date, expected_delivery, est_delivery_date]
+      delivered_at: [delivery_date, delivered_date, actual_delivery]
+  pickup:
+    requires: [shipment]
+    segments: [pickups, pickup, collections@shipments|carriers|pickup]
+    aliases:
+      pickup_date: [date, ready_date, pickup_window_start, scheduled_date, ready_time]
+      address: [pickup_address, location, from_address]
+      confirmation_number: [confirmation, pickup_confirmation_number, reference]
+  carrier:
+    requires: [shipment]
+    segments: [carriers, carrier, carrier_accounts, carrier-accounts, carrieraccounts, couriers, courier]
+    aliases:
+      name: [carrier_name, display_name, friendly_name]
+      code: [carrier_code, slug, courier_code]
+      services: [service_levels, service_codes, servicelevels]
+
+exclude:
+  carrier:
+    nash: /couriers are delivery drivers
+    getcircuit-com: /couriers are delivery drivers
+    geniemode: /courier records are courier bookings
+    omniful-inc: /orders/{id}/courier assigns a courier to an order
+duplicates:
+  kargo: [kargo-ai]
+
+findings:
+  - "A shipment agrees only on id and status. From and to addresses sit at 44%: carriers,
+    multi-carrier platforms and last-mile delivery networks each nest the addresses
+    differently."
+  - "Tracking agrees on the tracking number, and status sits just under (49%); the event
+    history is modelled too differently to share."
+  - "Labels agree on nothing outright: a label is a file at some providers, a purchase record
+    at others, and part of the shipment at the rest."
+  - "The carriers themselves are absent: FedEx and USPS have harvested specs without recorded
+    provenance, DHL publishes none the catalog holds, and UPS's versioned action paths do not
+    match. The context is built from multi-carrier platforms and delivery networks."
+decisions:
+  - "Shipping owns the shipment. Commerce's `/orders/{order_id}/shipments` is the order's view of
+    it."
+  - "A last-mile delivery (DoorDash Drive, Grab Express, Metrobi) is a shipment: a parcel moved
+    from one address to another."
+  - "A rate is `/rates` or a quote beneath rates or shipments; bare `quotes` and `estimates` were
+    sales quotes and ride estimates."
+  - "A courier is a carrier only when it is a company: Nash's and Circuit's couriers are drivers."
+  - "Tracking is `/tracking` (28 providers), covering trackers, tracks and trackings."
+  - "Duplicates merged: Kargo."

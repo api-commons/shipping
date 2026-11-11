@@ -1,0 +1,50 @@
+provider: shipcloud
+apis_io: https://apis.io/providers/shipcloud/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+      created_at: created_at
+      from_address: from
+      to_address: to
+      parcels: packages
+      carrier: carrier
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/shipcloud-openapi.yml#DELETE /shipments/{id}
+    - openapi/_original/shipcloud-openapi.yml#GET /shipments
+    - openapi/_original/shipcloud-openapi.yml#GET /shipments/{id}
+    - openapi/_original/shipcloud-openapi.yml#POST /shipments
+    - openapi/_original/shipcloud-openapi.yml#PUT /shipments/{id}
+  tracking:
+    path_segment:
+    - trackers
+    properties:
+      status: status
+      carrier: carrier
+      id:
+      - shipment_id
+      - id
+      created_at: created_at
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/shipcloud-openapi.yml#GET /trackers
+    - openapi/_original/shipcloud-openapi.yml#GET /trackers/{id}
+    - openapi/_original/shipcloud-openapi.yml#POST /trackers
+    - openapi/_original/shipcloud_v1_oai3.json#GET /trackers
+    - openapi/_original/shipcloud_v1_oai3.json#GET /trackers/{id}
+  carrier:
+    path_segment:
+    - carriers
+    properties:
+      name:
+      - name
+      - display_name
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/shipcloud-openapi.yml#GET /carriers
+    - openapi/_original/shipcloud_v1_oai3.json#GET /carriers

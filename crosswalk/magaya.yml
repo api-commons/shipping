@@ -1,0 +1,23 @@
+provider: magaya
+apis_io: https://apis.io/providers/magaya/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: guid
+      status: status
+      created_at: createdOn
+      from_address:
+      - shipper
+      - origin
+      to_address:
+      - consignee
+      - destination
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/magaya-openapi.yml#GET /shipments
+    - openapi/_original/magaya-openapi.yml#GET /shipments/{guid}
+    - openapi/_original/magaya-openapi.yml#POST /shipments

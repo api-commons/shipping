@@ -1,0 +1,20 @@
+provider: mycarrier
+apis_io: https://apis.io/providers/mycarrier/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/mycarrier-public-api-openapi.json#GET /api/v1/shipments/{id}
+  rate:
+    path_segment:
+    - rate
+    properties:
+      service: service
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/mycarrier-public-api-openapi.json#POST /api/v1/quote/rate

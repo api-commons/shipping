@@ -1,0 +1,36 @@
+provider: pitney-bowes
+apis_io: https://apis.io/providers/pitney-bowes/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pitney-bowes-openapi.yml#DELETE /shippingservices/v1/shipments/{shipmentId}
+    - openapi/_original/pitney-bowes-openapi.yml#GET /shippingservices/v1/shipments/{shipmentId}
+    - openapi/_original/pitney-bowes-openapi.yml#POST /shippingservices/v1/shipments
+  rate:
+    path_segment:
+    - rates
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pitney-bowes-openapi.yml#POST /shippingservices/v1/rates
+  tracking:
+    path_segment:
+    - tracking
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pitney-bowes-openapi.yml#GET /shippingservices/v1/tracking/{trackingNumber}
+  pickup:
+    path_segment:
+    - pickups
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pitney-bowes-openapi.yml#DELETE /shippingservices/v1/pickups/{pickupId}
+    - openapi/_original/pitney-bowes-openapi.yml#POST /shippingservices/v1/pickups

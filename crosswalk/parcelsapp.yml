@@ -1,0 +1,14 @@
+provider: parcelsapp
+apis_io: https://apis.io/providers/parcelsapp/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  tracking:
+    path_segment:
+    - tracking
+    properties:
+      id: uuid
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/parcelsapp-openapi.yml#GET /shipments/tracking
+    - openapi/_original/parcelsapp-openapi.yml#POST /shipments/tracking

@@ -1,0 +1,14 @@
+provider: shippit
+apis_io: https://apis.io/providers/shippit/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  tracking:
+    path_segment:
+    - tracking
+    properties:
+      tracking_number: tracking_number
+      status: state
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/shippit-openapi.yml#GET /orders/{tracking_number}/tracking

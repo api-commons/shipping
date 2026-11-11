@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/shipment.json",
+  "title": "Shipment",
+  "description": "The common shipment in Shipping, distilled from 72 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.736,
+      "x-commons-providers": 53,
+      "x-commons-spellings": [
+        "id",
+        "shipmentId",
+        "shipment_id",
+        "guid",
+        "object_id"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.611,
+      "x-commons-providers": 44,
+      "x-commons-spellings": [
+        "status",
+        "state",
+        "shipmentStatus",
+        "tracking_status"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.444,
+      "x-commons-providers": 32,
+      "x-commons-spellings": [
+        "created_at",
+        "created",
+        "createdAt",
+        "createTime",
+        "created_on",
+        "createdOn",
+        "created_date",
+        "object_created"
+      ],
+      "format": "date-time"
+    },
+    "from_address": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.444,
+      "x-commons-providers": 32,
+      "x-commons-spellings": [
+        "origin",
+        "pickup_address",
+        "sender",
+        "shipper",
+        "from",
+        "from_address",
+        "address_from",
+        "ship_from"
+      ]
+    },
+    "to_address": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.444,
+      "x-commons-providers": 32,
+      "x-commons-spellings": [
+        "destination",
+        "recipient",
+        "consignee",
+        "to",
+        "to_address",
+        "deliveryAddress",
+        "address_to",
+        "ship_to"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.319,
+      "x-commons-providers": 23,
+      "x-commons-spellings": [
+        "updated_at",
+        "updatedAt",
+        "updated",
+        "updateTime",
+        "object_updated",
+        "last_modified",
+        "modifiedDate",
+        "modified_at"
+      ],
+      "format": "date-time"
+    },
+    "tracking_number": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.306,
+      "x-commons-providers": 22,
+      "x-commons-spellings": [
+        "tracking_number",
+        "trackingNumber",
+        "trackingId",
+        "tracking_code",
+        "trackingNumbers",
+        "masterTrackingNumber"
+      ]
+    },
+    "parcels": {
+      "type": "array",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.278,
+      "x-commons-providers": 20,
+      "x-commons-spellings": [
+        "items",
+        "parcels",
+        "packages",
+        "parcel",
+        "pieces"
+      ]
+    },
+    "carrier": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.264,
+      "x-commons-providers": 19,
+      "x-commons-spellings": [
+        "carrier",
+        "courier",
+        "carrierName",
+        "carrierCode",
+        "carrierId",
+        "carrier_name",
+        "carrier_id",
+        "carrier_code"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "shipping",
+    "concept": "shipment",
+    "providers": 72,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

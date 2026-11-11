@@ -1,0 +1,55 @@
+provider: amazon-seller-central
+apis_io: https://apis.io/providers/amazon-seller-central/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    - shipment
+    properties:
+      id: shipmentId
+      status:
+      - status
+      - shipmentStatus
+      to_address: destination
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/amazon-seller-central-fulfillment-inbound-2024-03-20-original.json#GET /inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}
+    - openapi/_original/amazon-seller-central-orders-v0-original.json#POST /orders/v0/orders/{orderId}/shipment
+    - openapi/_original/amazon-seller-central-shipping-v2-original.json#POST /shipping/v2/shipments
+  rate:
+    path_segment:
+    - rates
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/amazon-seller-central-shipping-v2-original.json#POST /shipping/v2/shipments/rates
+  label:
+    path_segment:
+    - labels
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/amazon-seller-central-fulfillment-inbound-2024-03-20-original.json#POST /inbound/fba/2024-03-20/items/labels
+  tracking:
+    path_segment:
+    - tracking
+    properties:
+      tracking_number:
+      - trackingNumber
+      - trackingId
+      carrier: carrierCode
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/amazon-seller-central-fulfillment-outbound-2020-07-01-original.json#GET /fba/outbound/2020-07-01/tracking
+    - openapi/_original/amazon-seller-central-shipping-v2-original.json#GET /shipping/v2/tracking
+  carrier:
+    path_segment:
+    - carrieraccounts
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/amazon-seller-central-shipping-v2-original.json#POST /shipping/v2/carrierAccounts/{carrierId}
+    - openapi/_original/amazon-seller-central-shipping-v2-original.json#PUT /shipping/v2/carrierAccounts
+    - openapi/_original/amazon-seller-central-shipping-v2-original.json#PUT /shipping/v2/carrierAccounts/{carrierId}

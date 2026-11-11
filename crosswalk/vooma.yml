@@ -1,0 +1,26 @@
+provider: vooma
+apis_io: https://apis.io/providers/vooma/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/vooma-openapi-original.json#GET /shipments/{shipmentId}
+    - openapi/_original/vooma-openapi-original.json#POST /shipments
+    - openapi/_original/vooma-openapi-original.json#PUT /shipments/{shipmentId}
+  carrier:
+    path_segment:
+    - carriers
+    properties:
+      name: name
+      id: id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/vooma-openapi-original.json#GET /carriers/{carrierId}
+    - openapi/_original/vooma-openapi-original.json#POST /carriers
+    - openapi/_original/vooma-openapi-original.json#PUT /carriers/{carrierId}

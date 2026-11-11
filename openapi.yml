@@ -1,0 +1,468 @@
+openapi: 3.1.0
+info:
+  title: Shipping (API Commons)
+  version: 0.1.0-draft.20261110
+  description: 'The common Shipping interface, distilled from the harvested OpenAPI of 258 providers in the APIs.io
+    catalog. Not a product: no one serves this API. It is the shape the market already shares, measured, so that
+    providers, agents and integrators can map to one vocabulary. See profile.yml.'
+  license:
+    name: CC BY-NC-SA 4.0
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+paths:
+  /shipments/{shipment_id}:
+    parameters:
+    - $ref: '#/components/parameters/shipment_id'
+    get:
+      operationId: getShipment
+      summary: Get a shipment
+      tags:
+      - Shipments
+      x-commons-tier: core
+      x-commons-share: 0.744
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id001
+                $ref: '#/components/schemas/Shipment'
+    patch:
+      operationId: updateShipment
+      summary: Update a shipment
+      tags:
+      - Shipments
+      x-commons-tier: extended
+      x-commons-share: 0.346
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+    delete:
+      operationId: deleteShipment
+      summary: Delete a shipment
+      tags:
+      - Shipments
+      x-commons-tier: extended
+      x-commons-share: 0.256
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+  /shipments:
+    post:
+      operationId: createShipment
+      summary: Create a shipment
+      tags:
+      - Shipments
+      x-commons-tier: core
+      x-commons-share: 0.705
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+    get:
+      operationId: listShipments
+      summary: List shipments
+      tags:
+      - Shipments
+      x-commons-tier: core
+      x-commons-share: 0.603
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id001
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /rates:
+    post:
+      operationId: createRate
+      summary: Create a rate
+      tags:
+      - Rates
+      x-commons-tier: core
+      x-commons-share: 0.778
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id002
+                $ref: '#/components/schemas/Rate'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id002
+    get:
+      operationId: listRates
+      summary: List rates
+      tags:
+      - Rates
+      x-commons-tier: extended
+      x-commons-share: 0.333
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id002
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /labels:
+    post:
+      operationId: createLabel
+      summary: Create a label
+      tags:
+      - Labels
+      x-commons-tier: core
+      x-commons-share: 0.5
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id003
+                $ref: '#/components/schemas/Label'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id003
+    get:
+      operationId: listLabels
+      summary: List labels
+      tags:
+      - Labels
+      x-commons-tier: extended
+      x-commons-share: 0.4
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id003
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /labels/{label_id}:
+    parameters:
+    - $ref: '#/components/parameters/label_id'
+    get:
+      operationId: getLabel
+      summary: Get a label
+      tags:
+      - Labels
+      x-commons-tier: extended
+      x-commons-share: 0.4
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+  /trackings:
+    post:
+      operationId: createTracking
+      summary: Create a tracking
+      tags:
+      - Trackings
+      x-commons-tier: core
+      x-commons-share: 0.5
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id004
+                $ref: '#/components/schemas/Tracking'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id004
+    get:
+      operationId: listTrackings
+      summary: List trackings
+      tags:
+      - Trackings
+      x-commons-tier: extended
+      x-commons-share: 0.425
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id004
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /trackings/{tracking_id}:
+    parameters:
+    - $ref: '#/components/parameters/tracking_id'
+    get:
+      operationId: getTracking
+      summary: Get a tracking
+      tags:
+      - Trackings
+      x-commons-tier: extended
+      x-commons-share: 0.45
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+  /pickups:
+    post:
+      operationId: createPickup
+      summary: Create a pickup
+      tags:
+      - Pickups
+      x-commons-tier: core
+      x-commons-share: 0.75
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id005
+                $ref: '#/components/schemas/Pickup'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id005
+    get:
+      operationId: listPickups
+      summary: List pickups
+      tags:
+      - Pickups
+      x-commons-tier: core
+      x-commons-share: 0.625
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id005
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /pickups/{pickup_id}:
+    parameters:
+    - $ref: '#/components/parameters/pickup_id'
+    get:
+      operationId: getPickup
+      summary: Get a pickup
+      tags:
+      - Pickups
+      x-commons-tier: core
+      x-commons-share: 0.5
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+  /carriers:
+    get:
+      operationId: listCarriers
+      summary: List carriers
+      tags:
+      - Carriers
+      x-commons-tier: core
+      x-commons-share: 0.75
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id006
+                  $ref: '#/components/schemas/Carrier'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createCarrier
+      summary: Create a carrier
+      tags:
+      - Carriers
+      x-commons-tier: extended
+      x-commons-share: 0.375
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id006
+  /carriers/{carrier_id}:
+    parameters:
+    - $ref: '#/components/parameters/carrier_id'
+    get:
+      operationId: getCarrier
+      summary: Get a carrier
+      tags:
+      - Carriers
+      x-commons-tier: core
+      x-commons-share: 0.562
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+    patch:
+      operationId: updateCarrier
+      summary: Update a carrier
+      tags:
+      - Carriers
+      x-commons-tier: core
+      x-commons-share: 0.5
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id006
+    delete:
+      operationId: deleteCarrier
+      summary: Delete a carrier
+      tags:
+      - Carriers
+      x-commons-tier: extended
+      x-commons-share: 0.25
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+components:
+  schemas:
+    Shipment:
+      $ref: ./schema/shipment.json
+    Rate:
+      $ref: ./schema/rate.json
+    Label:
+      $ref: ./schema/label.json
+    Tracking:
+      $ref: ./schema/tracking.json
+    Pickup:
+      $ref: ./schema/pickup.json
+    Carrier:
+      $ref: ./schema/carrier.json
+  parameters:
+    shipment_id:
+      name: shipment_id
+      in: path
+      required: true
+      schema:
+        type: string
+    rate_id:
+      name: rate_id
+      in: path
+      required: true
+      schema:
+        type: string
+    label_id:
+      name: label_id
+      in: path
+      required: true
+      schema:
+        type: string
+    tracking_id:
+      name: tracking_id
+      in: path
+      required: true
+      schema:
+        type: string
+    pickup_id:
+      name: pickup_id
+      in: path
+      required: true
+      schema:
+        type: string
+    carrier_id:
+      name: carrier_id
+      in: path
+      required: true
+      schema:
+        type: string

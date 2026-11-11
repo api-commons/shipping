@@ -1,0 +1,17 @@
+provider: cargosmart
+apis_io: https://apis.io/providers/cargosmart/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      from_address: shipper
+      to_address: consignee
+      carrier:
+      - carrierCode
+      - carrierName
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/cargosmart-shipment-tracking-openapi.yml#GET /tracking/v1/shipments/{billOfLadingNumber}

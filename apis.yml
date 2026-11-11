@@ -1,0 +1,60 @@
+aid: common-shipping
+name: Shipping
+type: Common
+description: 'The common Shipping vocabulary, distilled from the harvested OpenAPI of 258 providers in APIs.io:
+  shared operations, JSON Schema per concept with measured adoption, and a crosswalk from the common names to each
+  provider''s own.'
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Application Programming Interface
+- API
+- Shipping
+- Logistics
+- Last Mile Delivery
+- Fulfillment
+- Common Schema
+created: '2026-11-10'
+modified: '2026-11-10'
+url: https://raw.githubusercontent.com/api-commons/shipping/main/apis.yml
+specificationVersion: '0.20'
+apis:
+- aid: common-shipping:shipping
+  name: Common Shipping Interface
+  description: The Shipping interface the market already shares, measured.
+  humanURL: https://github.com/api-commons/shipping
+  tags:
+  - Shipping
+  - Logistics
+  properties:
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-commons/shipping/main/openapi.yml
+  - type: Profile
+    url: https://raw.githubusercontent.com/api-commons/shipping/main/profile.yml
+  - type: Adopters
+    url: https://raw.githubusercontent.com/api-commons/shipping/main/adopters.yml
+  - type: Rules
+    url: https://raw.githubusercontent.com/api-commons/schema-commons/main/ruleset/schema-commons-naming.yaml
+  - type: JSONSchema
+    name: shipment
+    url: https://raw.githubusercontent.com/api-commons/shipping/main/schema/shipment.json
+  - type: JSONSchema
+    name: rate
+    url: https://raw.githubusercontent.com/api-commons/shipping/main/schema/rate.json
+  - type: JSONSchema
+    name: label
+    url: https://raw.githubusercontent.com/api-commons/shipping/main/schema/label.json
+  - type: JSONSchema
+    name: tracking
+    url: https://raw.githubusercontent.com/api-commons/shipping/main/schema/tracking.json
+  - type: JSONSchema
+    name: pickup
+    url: https://raw.githubusercontent.com/api-commons/shipping/main/schema/pickup.json
+  - type: JSONSchema
+    name: carrier
+    url: https://raw.githubusercontent.com/api-commons/shipping/main/schema/carrier.json
+common:
+- type: License
+  url: https://raw.githubusercontent.com/api-commons/shipping/main/LICENSE
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

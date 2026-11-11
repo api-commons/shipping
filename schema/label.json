@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/label.json",
+  "title": "Label",
+  "description": "The common label in Shipping, distilled from 17 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "tracking_number": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.412,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "tracking_number",
+        "trackingNumber",
+        "tracking_numbers",
+        "awb",
+        "tracking_code",
+        "trackingId"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.353,
+      "x-commons-providers": 6,
+      "x-commons-spellings": [
+        "id"
+      ]
+    },
+    "service": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.294,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "service",
+        "service_type",
+        "serviceLevel",
+        "serviceCode"
+      ]
+    },
+    "carrier": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.235,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "carrier"
+      ]
+    },
+    "shipment_id": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.235,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "shipment",
+        "shipment_id"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "shipping",
+    "concept": "label",
+    "providers": 17,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

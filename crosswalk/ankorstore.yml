@@ -1,0 +1,15 @@
+provider: ankorstore
+apis_io: https://apis.io/providers/ankorstore/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  tracking:
+    path_segment:
+    - tracking
+    properties:
+      id: id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ankorstore-main-openapi-original.yml#GET /api/v1/master-orders/{orderId}/tracking
+    - openapi/_original/ankorstore-main-openapi-original.yml#PATCH /api/v1/master-orders/{orderId}/tracking
+    - openapi/_original/ankorstore-main-openapi-original.yml#POST /api/v1/master-orders/{orderId}/tracking

@@ -1,0 +1,65 @@
+provider: aftership
+apis_io: https://apis.io/providers/aftership/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties:
+      id: id
+      status: tracking_status
+      created_at: created_at
+      from_address: ship_from
+      to_address: ship_to
+      updated_at: updated_at
+      tracking_number: tracking_number
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/aftership-warranty-api-openapi.yml#GET /claims/{claim_id}/shipments/{shipment_id}
+    - openapi/_original/aftership-warranty-api-openapi.yml#POST /claims/{claim_id}/shipments
+  rate:
+    path_segment:
+    - rates
+    properties:
+      id: id
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/aftership-shipping-api-openapi.yml#GET /rates
+    - openapi/_original/aftership-shipping-api-openapi.yml#GET /rates/{id}
+    - openapi/_original/aftership-shipping-api-openapi.yml#POST /rates
+  label:
+    path_segment:
+    - labels
+    properties:
+      tracking_number: tracking_numbers
+      id: id
+      service: service_type
+      shipment_id: shipment
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/aftership-shipping-api-openapi.yml#GET /labels
+    - openapi/_original/aftership-shipping-api-openapi.yml#GET /labels/{id}
+    - openapi/_original/aftership-shipping-api-openapi.yml#POST /labels
+  pickup:
+    path_segment:
+    - pickups
+    properties:
+      id: id
+      pickup_date: pickup_date
+      status: status
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/aftership-shipping-api-openapi.yml#GET /pickups
+    - openapi/_original/aftership-shipping-api-openapi.yml#GET /pickups/{id}
+    - openapi/_original/aftership-shipping-api-openapi.yml#POST /pickups
+  carrier:
+    path_segment:
+    - couriers
+    properties:
+      name: name
+      code: slug
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/aftership-shipping-api-openapi.yml#GET /couriers

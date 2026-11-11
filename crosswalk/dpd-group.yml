@@ -1,0 +1,45 @@
+provider: dpd-group
+apis_io: https://apis.io/providers/dpd-group/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipment
+    - shipments
+    properties:
+      id:
+      - id
+      - shipmentId
+      from_address: sender
+      to_address: receiver
+      parcels:
+      - parcels
+      - parcel
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/dpd-cz-geoapi-v1-openapi.json#POST /shipments
+    - openapi/_original/dpd-group-meta-api-shipping-openapi.json#POST /shipping/v1/shipment
+    - openapi/_original/dpd-group-meta-api-shipping-openapi.json#POST /shipping/v2/shipment
+  label:
+    path_segment:
+    - labels
+    - label
+    properties:
+      service: service
+      shipment_id: shipment
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/dpd-cz-geoapi-v1-openapi.json#POST /parcels/labels
+    - openapi/_original/dpd-cz-geoapi-v1-openapi.json#POST /parcels/{parcelIdent}/labels
+    - openapi/_original/dpd-group-meta-api-shipping-openapi.json#POST /shipping/v1/label
+  tracking:
+    path_segment:
+    - tracking
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/dpd-cz-geoapi-v1-openapi.json#GET /parcels/{parcelIdent}/tracking
+    - openapi/_original/dpd-cz-geoapi-v1-openapi.json#POST /parcels/tracking
+    - openapi/_original/dpd-cz-geoapi-v2-openapi.json#GET /parcels/{parcelIdent}/tracking
+    - openapi/_original/dpd-cz-geoapi-v2-openapi.json#POST /parcels/tracking

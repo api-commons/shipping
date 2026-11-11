@@ -1,0 +1,13 @@
+provider: portbase
+apis_io: https://apis.io/providers/portbase/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/portbase-hinterland-container-notification-openapi.yml#POST /listen/shipments
+    - openapi/_original/portbase-hinterland-container-notification-v2.json#POST /listen/shipments

@@ -1,0 +1,86 @@
+provider: kibo-commerce
+apis_io: https://apis.io/providers/kibo-commerce/
+context: shipping
+generated: '2026-11-10'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    - shipment
+    properties:
+      id:
+      - id
+      - shipmentId
+      status:
+      - status
+      - shipmentStatus
+      from_address: origin
+      to_address: destination
+      tracking_number:
+      - trackingNumber
+      - trackingNumbers
+      - masterTrackingNumber
+      parcels:
+      - items
+      - packages
+      carrier: carrier
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/kibo-commerce-catalog-admin-openapi.yml#DELETE /commerce/rules/shipment/{code}
+    - openapi/_original/kibo-commerce-catalog-admin-openapi.yml#GET /commerce/rules/shipment
+    - openapi/_original/kibo-commerce-catalog-admin-openapi.yml#GET /commerce/rules/shipment/{code}
+    - openapi/_original/kibo-commerce-catalog-admin-openapi.yml#POST /commerce/rules/shipment
+    - openapi/_original/kibo-commerce-catalog-admin-openapi.yml#PUT /commerce/rules/shipment/{code}
+  label:
+    path_segment:
+    - label
+    properties:
+      tracking_number: trackingNumber
+      id: id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/kibo-commerce-commerce-openapi.yml#GET /commerce/orders/{orderId}/packages/{packageId}/label
+    - openapi/_original/kibo-commerce-commerce-openapi.yml#GET /commerce/returns/{returnId}/packages/{packageId}/label
+    - openapi/_original/kibo-commerce-commerce-openapi.yml#GET /commerce/returns/{returnId}/shipping/label
+    - openapi/_original/kibo-commerce-pricing-openapi.yml#GET /commerce/catalog/storefront/discounts/label/{label}
+    - openapi/_original/kibo-commerce-pricing-openapi.yml#GET /commerce/catalog/storefront/discounts/secure/label/{label}
+  tracking:
+    path_segment:
+    - tracking
+    properties:
+      tracking_number: trackingNumbers
+      carrier:
+      - carrier
+      - carrierName
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/kibo-commerce-fulfillment-openapi.yml#PUT /commerce/shipments/{shipmentNumber}/consolidated/packages/tracking
+    - openapi/_original/kibo-commerce-fulfillment-openapi.yml#PUT /commerce/shipments/{shipmentNumber}/consolidated/packages/{packageConsolidationId}/tracking
+    - openapi/_original/openapi_openapi_fulfillment.json#PUT /commerce/shipments/{shipmentNumber}/consolidated/packages/tracking
+    - openapi/_original/openapi_openapi_fulfillment.json#PUT /commerce/shipments/{shipmentNumber}/consolidated/packages/{packageConsolidationId}/tracking
+  pickup:
+    path_segment:
+    - pickups
+    properties:
+      id: id
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/kibo-commerce-commerce-openapi.yml#DELETE /commerce/orders/{orderId}/pickups/{pickupId}
+    - openapi/_original/kibo-commerce-commerce-openapi.yml#GET /commerce/orders/{orderId}/pickups/{pickupId}
+    - openapi/_original/kibo-commerce-commerce-openapi.yml#POST /commerce/orders/{orderId}/pickups
+    - openapi/_original/kibo-commerce-commerce-openapi.yml#PUT /commerce/orders/{orderId}/pickups/{pickupId}
+    - openapi/_original/openapi_openapi_commerce.json#DELETE /commerce/orders/{orderId}/pickups/{pickupId}
+  carrier:
+    path_segment:
+    - carriers
+    properties:
+      name: name
+      id: id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/kibo-commerce-shipping-admin-openapi.yml#DELETE /commerce/shipping/admin/carriers/{carrierId}
+    - openapi/_original/kibo-commerce-shipping-admin-openapi.yml#GET /commerce/shipping/admin/carriers
+    - openapi/_original/kibo-commerce-shipping-admin-openapi.yml#GET /commerce/shipping/admin/carriers/{carrierId}
+    - openapi/_original/kibo-commerce-shipping-admin-openapi.yml#POST /commerce/shipping/admin/carriers/{carrierId}
+    - openapi/_original/kibo-commerce-shipping-admin-openapi.yml#PUT /commerce/shipping/admin/carriers/{carrierId}
