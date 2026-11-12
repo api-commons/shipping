@@ -2,61 +2,101 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/label.json",
   "title": "Label",
-  "description": "The common label in Shipping, distilled from 17 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common label in Shipping, distilled from 19 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "tracking_number": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.412,
-      "x-commons-providers": 7,
+      "x-commons-share": 0.474,
+      "x-commons-providers": 9,
       "x-commons-spellings": [
         "tracking_number",
+        "trackingId",
         "trackingNumber",
         "tracking_numbers",
         "awb",
-        "tracking_code",
-        "trackingId"
+        "tracking_code"
       ]
     },
     "id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.353,
-      "x-commons-providers": 6,
+      "x-commons-share": 0.421,
+      "x-commons-providers": 8,
       "x-commons-spellings": [
-        "id"
+        "id",
+        "labelId",
+        "label_id"
       ]
     },
     "service": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.294,
-      "x-commons-providers": 5,
+      "x-commons-share": 0.316,
+      "x-commons-providers": 6,
       "x-commons-spellings": [
         "service",
         "service_type",
         "serviceLevel",
-        "serviceCode"
-      ]
-    },
-    "carrier": {
-      "type": "string",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.235,
-      "x-commons-providers": 4,
-      "x-commons-spellings": [
-        "carrier"
+        "serviceCode",
+        "service_code"
       ]
     },
     "shipment_id": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.235,
-      "x-commons-providers": 4,
+      "x-commons-share": 0.316,
+      "x-commons-providers": 6,
       "x-commons-spellings": [
         "shipment",
-        "shipment_id"
+        "shipment_id",
+        "shipmentId"
+      ]
+    },
+    "carrier": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.263,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "carrier",
+        "carrier_id",
+        "carrier_code"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.263,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "created_at",
+        "createdOn",
+        "created"
+      ],
+      "format": "date-time"
+    },
+    "label_format": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.263,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "labelType",
+        "format",
+        "file_type",
+        "labelFormat",
+        "label_format"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.211,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "type"
       ]
     }
   },
@@ -66,7 +106,7 @@
   "x-commons": {
     "context": "shipping",
     "concept": "label",
-    "providers": 17,
+    "providers": 19,
     "generated": "2026-11-12",
     "version": "0.1.0-draft.20261112",
     "status": "draft"

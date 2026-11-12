@@ -2,55 +2,74 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/shipment.json",
   "title": "Shipment",
-  "description": "The common shipment in Shipping, distilled from 73 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common shipment in Shipping, distilled from 75 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.74,
-      "x-commons-providers": 54,
+      "x-commons-share": 0.747,
+      "x-commons-providers": 56,
       "x-commons-spellings": [
         "id",
         "shipmentId",
         "shipment_id",
         "guid",
+        "labelId",
+        "label_id",
         "object_id"
       ]
     },
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.63,
-      "x-commons-providers": 46,
+      "x-commons-share": 0.64,
+      "x-commons-providers": 48,
       "x-commons-spellings": [
         "status",
         "state",
+        "tracking_status",
         "shipmentStatus",
-        "tracking_status"
+        "shipment_status"
       ]
     },
     "to_address": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.452,
-      "x-commons-providers": 33,
+      "x-commons-share": 0.467,
+      "x-commons-providers": 35,
       "x-commons-spellings": [
         "destination",
         "recipient",
         "consignee",
         "to",
+        "ship_to",
+        "receiver",
         "to_address",
-        "deliveryAddress",
-        "address_to",
-        "ship_to"
+        "deliveryAddress"
+      ]
+    },
+    "from_address": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.453,
+      "x-commons-providers": 34,
+      "x-commons-spellings": [
+        "origin",
+        "pickup_address",
+        "shipper",
+        "sender",
+        "from",
+        "ship_from",
+        "from_address",
+        "address_from"
       ]
     },
     "created_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.438,
-      "x-commons-providers": 32,
+      "x-commons-share": 0.44,
+      "x-commons-providers": 33,
       "x-commons-spellings": [
         "created_at",
         "created",
@@ -63,27 +82,11 @@
       ],
       "format": "date-time"
     },
-    "from_address": {
-      "type": "object",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.438,
-      "x-commons-providers": 32,
-      "x-commons-spellings": [
-        "origin",
-        "pickup_address",
-        "sender",
-        "shipper",
-        "from",
-        "from_address",
-        "address_from",
-        "ship_from"
-      ]
-    },
     "tracking_number": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.315,
-      "x-commons-providers": 23,
+      "x-commons-share": 0.32,
+      "x-commons-providers": 24,
       "x-commons-spellings": [
         "tracking_number",
         "trackingNumber",
@@ -96,47 +99,47 @@
     "updated_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.315,
-      "x-commons-providers": 23,
+      "x-commons-share": 0.32,
+      "x-commons-providers": 24,
       "x-commons-spellings": [
         "updated_at",
         "updatedAt",
         "updated",
+        "modified_at",
         "updateTime",
         "object_updated",
         "last_modified",
-        "modifiedDate",
-        "modified_at"
+        "modifiedDate"
       ],
       "format": "date-time"
-    },
-    "carrier": {
-      "type": "string",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.274,
-      "x-commons-providers": 20,
-      "x-commons-spellings": [
-        "carrier",
-        "courier",
-        "carrierName",
-        "carrierCode",
-        "carrierId",
-        "slug",
-        "carrier_name",
-        "carrier_id"
-      ]
     },
     "parcels": {
       "type": "array",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.274,
-      "x-commons-providers": 20,
+      "x-commons-share": 0.293,
+      "x-commons-providers": 22,
       "x-commons-spellings": [
         "items",
         "parcels",
         "packages",
         "parcel",
         "pieces"
+      ]
+    },
+    "carrier": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.28,
+      "x-commons-providers": 21,
+      "x-commons-spellings": [
+        "carrier",
+        "courier",
+        "carrierName",
+        "carrierCode",
+        "carrierId",
+        "carrier_id",
+        "carrier_code",
+        "slug"
       ]
     }
   },
@@ -146,7 +149,7 @@
   "x-commons": {
     "context": "shipping",
     "concept": "shipment",
-    "providers": 73,
+    "providers": 75,
     "generated": "2026-11-12",
     "version": "0.1.0-draft.20261112",
     "status": "draft"

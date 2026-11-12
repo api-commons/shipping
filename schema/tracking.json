@@ -2,14 +2,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/tracking.json",
   "title": "Tracking",
-  "description": "The common tracking in Shipping, distilled from 36 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common tracking in Shipping, distilled from 38 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.611,
-      "x-commons-providers": 22,
+      "x-commons-share": 0.632,
+      "x-commons-providers": 24,
       "x-commons-spellings": [
         "status",
         "state",
@@ -19,14 +19,14 @@
     "tracking_number": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.556,
-      "x-commons-providers": 20,
+      "x-commons-share": 0.579,
+      "x-commons-providers": 22,
       "x-commons-spellings": [
         "tracking_number",
         "trackingId",
         "trackingNumber",
-        "tracking_code",
         "awb",
+        "tracking_code",
         "trackingNumbers",
         "trackingCode",
         "tracking_numbers"
@@ -35,15 +35,15 @@
     "carrier": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.306,
-      "x-commons-providers": 11,
+      "x-commons-share": 0.316,
+      "x-commons-providers": 12,
       "x-commons-spellings": [
         "carrier",
         "carrier_name",
-        "carrierCode",
         "carrier_id",
-        "carrierName",
         "carrier_code",
+        "carrierCode",
+        "carrierName",
         "courierCode",
         "courier_code"
       ]
@@ -51,7 +51,7 @@
     "id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.278,
+      "x-commons-share": 0.263,
       "x-commons-providers": 10,
       "x-commons-spellings": [
         "id",
@@ -63,7 +63,7 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.25,
+      "x-commons-share": 0.237,
       "x-commons-providers": 9,
       "x-commons-spellings": [
         "createdAt",
@@ -71,6 +71,16 @@
         "created"
       ],
       "format": "date-time"
+    },
+    "events": {
+      "type": "array",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.211,
+      "x-commons-providers": 8,
+      "x-commons-spellings": [
+        "events",
+        "tracking_details"
+      ]
     }
   },
   "required": [
@@ -79,7 +89,7 @@
   "x-commons": {
     "context": "shipping",
     "concept": "tracking",
-    "providers": 36,
+    "providers": 38,
     "generated": "2026-11-12",
     "version": "0.1.0-draft.20261112",
     "status": "draft"

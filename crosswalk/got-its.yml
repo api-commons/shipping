@@ -21,6 +21,7 @@ concepts:
     - labels
     properties:
       id: id
+      created_at: createdOn
     core_coverage: 0.0
     evidence:
     - openapi/_original/got-its-openapi-original.yml#DELETE /assets/{assetId}/labels/{bleId}

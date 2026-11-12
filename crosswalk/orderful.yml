@@ -16,8 +16,9 @@ concepts:
     path_segment:
     - labels
     properties:
-      carrier: carrier
       shipment_id: shipment
+      carrier: carrier
+      type: type
     core_coverage: 0.0
     evidence:
     - openapi/_original/orderful-openapi-original.yml#POST /v3/labels

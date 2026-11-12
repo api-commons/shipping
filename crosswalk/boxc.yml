@@ -11,12 +11,12 @@ concepts:
       to_address:
       - consignee
       - to
-      created_at: created
       from_address: from
+      created_at: created
       tracking_number: tracking_number
       updated_at: updated
-      carrier: carrier
       parcels: packages
+      carrier: carrier
     core_coverage: 0.5
     evidence:
     - openapi/_original/boxc-openapi-original.yml#DELETE /shipments/{id}
@@ -31,8 +31,9 @@ concepts:
       tracking_number: tracking_number
       id: id
       service: service
-      carrier: carrier
       shipment_id: shipment_id
+      carrier: carrier
+      created_at: created
     core_coverage: 0.0
     evidence:
     - openapi/_original/boxc-openapi-original.yml#GET /labels/{id}
@@ -48,6 +49,7 @@ concepts:
       carrier: carrier
       id: shipment_id
       created_at: created
+      events: events
     core_coverage: 1.0
     evidence:
     - openapi/_original/boxc-openapi-original.yml#GET /track/{trackingNumber}

@@ -34,6 +34,7 @@ concepts:
     properties:
       tracking_number: trackingId
       created_at: createdAt
+      events: events
     core_coverage: 0.5
     evidence:
     - openapi/_original/99minutos-api-v3-openapi.json#GET /api/v3/shipments/tracking

@@ -22,7 +22,8 @@ concepts:
   label:
     path_segment:
     - labels
-    properties: {}
+    properties:
+      type: type
     core_coverage: 0.0
     evidence:
     - openapi/_original/doordash-ads-openapi.yml#GET /ads/api/v1/menu/labels

@@ -10,12 +10,12 @@ concepts:
     properties:
       id: id
       status: status
-      created_at:
-      - createdAt
-      - created_at
       from_address:
       - senderAddress
       - origin
+      created_at:
+      - createdAt
+      - created_at
       updated_at:
       - updatedAt
       - updated_at

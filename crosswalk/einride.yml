@@ -9,10 +9,10 @@ concepts:
     properties:
       status: state
       to_address: deliveryAddress
-      created_at: createTime
       from_address:
       - sender
       - pickupAddress
+      created_at: createTime
       tracking_number: trackingId
       updated_at: updateTime
     core_coverage: 0.5

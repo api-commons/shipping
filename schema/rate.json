@@ -2,40 +2,98 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/rate.json",
   "title": "Rate",
-  "description": "The common rate in Shipping, distilled from 9 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common rate in Shipping, distilled from 11 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "service": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.444,
-      "x-commons-providers": 4,
+      "x-commons-share": 0.455,
+      "x-commons-providers": 5,
       "x-commons-spellings": [
-        "service",
         "service_type",
+        "service",
         "service_name",
+        "service_code",
         "servicelevel"
       ]
     },
     "amount": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.333,
-      "x-commons-providers": 3,
+      "x-commons-share": 0.364,
+      "x-commons-providers": 4,
       "x-commons-spellings": [
         "total_charge",
+        "shipping_amount",
         "amount"
       ]
     },
     "id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.333,
-      "x-commons-providers": 3,
+      "x-commons-share": 0.364,
+      "x-commons-providers": 4,
       "x-commons-spellings": [
         "id",
         "guid",
+        "label_id",
+        "rate_id",
         "object_id"
+      ]
+    },
+    "carrier": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.273,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "carrier_id",
+        "carrier_name",
+        "carrier_code",
+        "provider"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.273,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "created_at",
+        "object_created"
+      ],
+      "format": "date-time"
+    },
+    "packages": {
+      "type": "array",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.273,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "packages"
+      ]
+    },
+    "ship_date": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.273,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "ship_date",
+        "shipDate"
+      ]
+    },
+    "transit_days": {
+      "type": "integer",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.273,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "transit_time",
+        "delivery_days",
+        "days",
+        "duration_terms"
       ]
     }
   },
@@ -45,7 +103,7 @@
   "x-commons": {
     "context": "shipping",
     "concept": "rate",
-    "providers": 9,
+    "providers": 11,
     "generated": "2026-11-12",
     "version": "0.1.0-draft.20261112",
     "status": "draft"

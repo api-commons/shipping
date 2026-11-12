@@ -10,8 +10,8 @@ concepts:
       id: id
       status: status
       to_address: recipient
-      created_at: created_at
       from_address: sender
+      created_at: created_at
       tracking_number: tracking_number
       updated_at: updated_at
       carrier: courier

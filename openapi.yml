@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Shipping (API Commons)
   version: 0.1.0-draft.20261112
-  description: 'The common Shipping interface, distilled from the harvested OpenAPI of 260 providers in the APIs.io
+  description: 'The common Shipping interface, distilled from the harvested OpenAPI of 262 providers in the APIs.io
     catalog. Not a product: no one serves this API. It is the shape the market already shares, measured, so that
     providers, agents and integrators can map to one vocabulary. See profile.yml.'
   license:
@@ -18,7 +18,7 @@ paths:
       tags:
       - Shipments
       x-commons-tier: core
-      x-commons-share: 0.734
+      x-commons-share: 0.741
       responses:
         '200':
           description: OK
@@ -32,7 +32,7 @@ paths:
       tags:
       - Shipments
       x-commons-tier: extended
-      x-commons-share: 0.342
+      x-commons-share: 0.346
       responses:
         '200':
           description: OK
@@ -50,7 +50,7 @@ paths:
       tags:
       - Shipments
       x-commons-tier: extended
-      x-commons-share: 0.253
+      x-commons-share: 0.259
       responses:
         '200':
           description: OK
@@ -64,7 +64,7 @@ paths:
       tags:
       - Shipments
       x-commons-tier: core
-      x-commons-share: 0.709
+      x-commons-share: 0.716
       responses:
         '200':
           description: OK
@@ -82,7 +82,7 @@ paths:
       tags:
       - Shipments
       x-commons-tier: core
-      x-commons-share: 0.595
+      x-commons-share: 0.605
       responses:
         '200':
           description: OK
@@ -107,7 +107,7 @@ paths:
       tags:
       - Rates
       x-commons-tier: core
-      x-commons-share: 0.8
+      x-commons-share: 0.833
       responses:
         '200':
           description: OK
@@ -126,7 +126,7 @@ paths:
       tags:
       - Rates
       x-commons-tier: extended
-      x-commons-share: 0.3
+      x-commons-share: 0.417
       responses:
         '200':
           description: OK
@@ -144,6 +144,22 @@ paths:
         in: query
         schema:
           type: string
+  /shipping-rates/{rate_id}:
+    parameters:
+    - $ref: '#/components/parameters/rate_id'
+    get:
+      operationId: getRate
+      summary: Get a rate
+      tags:
+      - Rates
+      x-commons-tier: extended
+      x-commons-share: 0.25
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
   /labels:
     post:
       operationId: createLabel
@@ -151,7 +167,7 @@ paths:
       tags:
       - Labels
       x-commons-tier: core
-      x-commons-share: 0.5
+      x-commons-share: 0.545
       responses:
         '200':
           description: OK
@@ -170,7 +186,7 @@ paths:
       tags:
       - Labels
       x-commons-tier: extended
-      x-commons-share: 0.4
+      x-commons-share: 0.455
       responses:
         '200':
           description: OK
@@ -197,7 +213,7 @@ paths:
       tags:
       - Labels
       x-commons-tier: extended
-      x-commons-share: 0.4
+      x-commons-share: 0.455
       responses:
         '200':
           description: OK
@@ -210,8 +226,8 @@ paths:
       summary: Create a tracking
       tags:
       - Trackings
-      x-commons-tier: core
-      x-commons-share: 0.512
+      x-commons-tier: extended
+      x-commons-share: 0.488
       responses:
         '200':
           description: OK
@@ -230,7 +246,7 @@ paths:
       tags:
       - Trackings
       x-commons-tier: extended
-      x-commons-share: 0.415
+      x-commons-share: 0.442
       responses:
         '200':
           description: OK
@@ -257,7 +273,7 @@ paths:
       tags:
       - Trackings
       x-commons-tier: extended
-      x-commons-share: 0.463
+      x-commons-share: 0.465
       responses:
         '200':
           description: OK
@@ -271,7 +287,7 @@ paths:
       tags:
       - Pickups
       x-commons-tier: core
-      x-commons-share: 0.778
+      x-commons-share: 0.818
       responses:
         '200':
           description: OK
@@ -290,7 +306,7 @@ paths:
       tags:
       - Pickups
       x-commons-tier: core
-      x-commons-share: 0.556
+      x-commons-share: 0.636
       responses:
         '200':
           description: OK
@@ -317,13 +333,44 @@ paths:
       tags:
       - Pickups
       x-commons-tier: extended
-      x-commons-share: 0.444
+      x-commons-share: 0.455
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema: *id005
+    delete:
+      operationId: deletePickup
+      summary: Delete a pickup
+      tags:
+      - Pickups
+      x-commons-tier: extended
+      x-commons-share: 0.364
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+    patch:
+      operationId: updatePickup
+      summary: Update a pickup
+      tags:
+      - Pickups
+      x-commons-tier: extended
+      x-commons-share: 0.273
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id005
   /carriers:
     get:
       operationId: listCarriers
@@ -331,7 +378,7 @@ paths:
       tags:
       - Carriers
       x-commons-tier: core
-      x-commons-share: 0.75
+      x-commons-share: 0.765
       responses:
         '200':
           description: OK
@@ -356,7 +403,7 @@ paths:
       tags:
       - Carriers
       x-commons-tier: extended
-      x-commons-share: 0.375
+      x-commons-share: 0.353
       responses:
         '200':
           description: OK
@@ -377,7 +424,7 @@ paths:
       tags:
       - Carriers
       x-commons-tier: core
-      x-commons-share: 0.562
+      x-commons-share: 0.588
       responses:
         '200':
           description: OK
@@ -389,8 +436,8 @@ paths:
       summary: Update a carrier
       tags:
       - Carriers
-      x-commons-tier: core
-      x-commons-share: 0.5
+      x-commons-tier: extended
+      x-commons-share: 0.471
       responses:
         '200':
           description: OK
@@ -408,7 +455,7 @@ paths:
       tags:
       - Carriers
       x-commons-tier: extended
-      x-commons-share: 0.25
+      x-commons-share: 0.294
       responses:
         '200':
           description: OK

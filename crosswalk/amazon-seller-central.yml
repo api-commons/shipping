@@ -21,14 +21,17 @@ concepts:
   rate:
     path_segment:
     - rates
-    properties: {}
+    properties:
+      packages: packages
+      ship_date: shipDate
     core_coverage: 0.0
     evidence:
     - openapi/_original/amazon-seller-central-shipping-v2-original.json#POST /shipping/v2/shipments/rates
   label:
     path_segment:
     - labels
-    properties: {}
+    properties:
+      label_format: labelType
     core_coverage: 0.0
     evidence:
     - openapi/_original/amazon-seller-central-fulfillment-inbound-2024-03-20-original.json#POST /inbound/fba/2024-03-20/items/labels

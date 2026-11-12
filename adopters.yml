@@ -107,6 +107,15 @@ adopters:
   crosswalk: crosswalk/dat-freight.yml
   concepts:
   - shipment
+- provider: dhl
+  apis_io: https://apis.io/providers/dhl/
+  crosswalk: crosswalk/dhl.yml
+  concepts:
+  - label
+  - pickup
+  - rate
+  - shipment
+  - tracking
 - provider: doordash
   apis_io: https://apis.io/providers/doordash/
   crosswalk: crosswalk/doordash.yml
@@ -417,6 +426,16 @@ adopters:
   crosswalk: crosswalk/shipcloud.yml
   concepts:
   - carrier
+  - shipment
+  - tracking
+- provider: shipengine
+  apis_io: https://apis.io/providers/shipengine/
+  crosswalk: crosswalk/shipengine.yml
+  concepts:
+  - carrier
+  - label
+  - pickup
+  - rate
   - shipment
   - tracking
 - provider: shippit

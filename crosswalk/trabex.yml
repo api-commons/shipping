@@ -10,8 +10,8 @@ concepts:
       id: shipmentId
       status: status
       to_address: consignee
-      created_at: createdAt
       from_address: shipper
+      created_at: createdAt
       tracking_number: trackingNumber
       updated_at: updatedAt
       carrier: carrier

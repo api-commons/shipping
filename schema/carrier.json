@@ -2,25 +2,26 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/carrier.json",
   "title": "Carrier",
-  "description": "The common carrier in Shipping, distilled from 16 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common carrier in Shipping, distilled from 17 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "name": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.75,
-      "x-commons-providers": 12,
+      "x-commons-share": 0.765,
+      "x-commons-providers": 13,
       "x-commons-spellings": [
         "name",
         "display_name",
         "displayName",
-        "carrier_name"
+        "carrier_name",
+        "friendly_name"
       ]
     },
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.562,
+      "x-commons-share": 0.529,
       "x-commons-providers": 9,
       "x-commons-spellings": [
         "id",
@@ -31,12 +32,12 @@
     "code": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.25,
-      "x-commons-providers": 4,
+      "x-commons-share": 0.294,
+      "x-commons-providers": 5,
       "x-commons-spellings": [
         "code",
-        "slug",
-        "carrier_code"
+        "carrier_code",
+        "slug"
       ]
     }
   },
@@ -46,7 +47,7 @@
   "x-commons": {
     "context": "shipping",
     "concept": "carrier",
-    "providers": 16,
+    "providers": 17,
     "generated": "2026-11-12",
     "version": "0.1.0-draft.20261112",
     "status": "draft"

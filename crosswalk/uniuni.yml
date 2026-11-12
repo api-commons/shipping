@@ -29,6 +29,7 @@ concepts:
     properties:
       status: status
       tracking_number: trackingId
+      events: events
     core_coverage: 1.0
     evidence:
     - openapi/_original/uniuni-platform-client-api-openapi.yml#GET /client/tracking

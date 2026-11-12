@@ -10,10 +10,10 @@ concepts:
       id: id
       status: status
       to_address: to_address
-      created_at: created_at
       from_address:
       - from_address
       - sender_address
+      created_at: created_at
       tracking_number: tracking_number
       updated_at: updated_at
     core_coverage: 1.0
@@ -40,6 +40,7 @@ concepts:
       - tracking_number
       carrier: carrier_code
       created_at: created_at
+      events: events
     core_coverage: 0.5
     evidence:
     - openapi/_original/sendcloud-v2-tracking-openapi.yml#GET /tracking/{tracking_number}

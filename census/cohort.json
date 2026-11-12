@@ -544,6 +544,70 @@
   ]
  },
  {
+  "slug": "dhl",
+  "specs": [
+   "openapi/_original/dhl-additional-services-dhl-freight-openapi.yml",
+   "openapi/_original/dhl-authentication-api-dhl-freight-openapi.yml",
+   "openapi/_original/dhl-authentication-api-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-authentication-dhl-ecommerce-americas-openapi.yml",
+   "openapi/_original/dhl-container-dhl-ecommerce-americas-openapi.yml",
+   "openapi/_original/dhl-datafactory-autocomplete-20-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-deutsche-post-hybrid-mail-shipments-e-post-post-parcel-germany-openapi.json",
+   "openapi/_original/dhl-deutsche-post-international-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-deutsche-post-internetmarke-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-deutsche-post-print-mailing-dispatch-preparation-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-deutsche-post-print-mailing-targeting-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-dgf-document-openapi.yml",
+   "openapi/_original/dhl-dgf-push-api-openapi.yml",
+   "openapi/_original/dhl-dgf-shipment-booking-openapi.yml",
+   "openapi/_original/dhl-dgf-shipment-status-openapi.yml",
+   "openapi/_original/dhl-dgf-shipment-tracking-openapi.yml",
+   "openapi/_original/dhl-dhl-parcel-de-pickup-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-dhl-parcel-de-postnumber-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-dhl-parcel-de-private-shipping-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-dhl-parcel-de-returns-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-dhl-parcel-de-shipment-tracking-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-duty-tax-dhl-ecommerce-americas-openapi.yml",
+   "openapi/_original/dhl-ecommerce-europe-openapi.yml",
+   "openapi/_original/dhl-ecommerce-uk-openapi.json",
+   "openapi/_original/dhl-econnect-beta-dhl-ecommerce-europe-openapi.yml",
+   "openapi/_original/dhl-label-dhl-ecommerce-americas-openapi.yml",
+   "openapi/_original/dhl-location-finder-dhl-ecommerce-india-blue-dart-openapi.yml",
+   "openapi/_original/dhl-location-finder-unified-openapi.yml",
+   "openapi/_original/dhl-mail-communication-tracking-push-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-manifest-dhl-ecommerce-americas-openapi.yml",
+   "openapi/_original/dhl-master-download-dhl-ecommerce-india-blue-dart-openapi.yml",
+   "openapi/_original/dhl-mydhl-api-dhl-express-openapi.yml",
+   "openapi/_original/dhl-mydhl-api-xml-dhl-express-openapi.yml",
+   "openapi/_original/dhl-parcel-de-shipping-post-parcel-germany-v2-openapi.yml",
+   "openapi/_original/dhl-parcel-eu-openapi.yml",
+   "openapi/_original/dhl-pickup-cancellation-dhl-ecommerce-india-blue-dart-openapi.yml",
+   "openapi/_original/dhl-price-quote-dhl-freight-openapi.yml",
+   "openapi/_original/dhl-print-dhl-freight-openapi.yml",
+   "openapi/_original/dhl-product-and-sub-product-pickup-detail-dhl-ecommerce-india-blue-dart-openapi.yml",
+   "openapi/_original/dhl-product-dhl-freight-openapi.yml",
+   "openapi/_original/dhl-product-finder-dhl-ecommerce-americas-openapi.yml",
+   "openapi/_original/dhl-products-api-post-parcel-germany-openapi.yml",
+   "openapi/_original/dhl-registration-pickup-dhl-ecommerce-india-blue-dart-openapi.yml",
+   "openapi/_original/dhl-return-label-dhl-ecommerce-americas-openapi.yml",
+   "openapi/_original/dhl-shipment-booking-dhl-freight-openapi.yml",
+   "openapi/_original/dhl-shipment-label-dhl-global-forwarding-openapi.yml",
+   "openapi/_original/dhl-shipment-tracking-dhl-ecommerce-india-blue-dart-openapi.yml",
+   "openapi/_original/dhl-shipment-tracking-openapi.yml",
+   "openapi/_original/dhl-shipment-tracking-unified-push-openapi.yml",
+   "openapi/_original/dhl-shipment-tracking-v2-dhl-global-forwarding-openapi.yml",
+   "openapi/_original/dhl-time-and-attendance-api-openapi.yml",
+   "openapi/_original/dhl-time-table-dhl-freight-openapi.yml",
+   "openapi/_original/dhl-track-and-trace-supply-chain-openapi.yml",
+   "openapi/_original/dhl-tracking-dhl-ecommerce-americas-openapi.yml",
+   "openapi/_original/dhl-tracking-webhooks-dhl-ecommerce-americas-openapi.yml",
+   "openapi/_original/dhl-transit-time-finder-dhl-ecommerce-india-blue-dart-openapi.yml",
+   "openapi/_original/dhl-transportation-management-openapi.yml",
+   "openapi/_original/dhl-warehouse-management-openapi.yml",
+   "openapi/_original/dhl-waybill-dhl-ecommerce-india-blue-dart-openapi.yml"
+  ]
+ },
+ {
   "slug": "doordash",
   "specs": [
    "openapi/_original/doordash-ads-openapi.yml",
@@ -1800,6 +1864,13 @@
   "slug": "shipday",
   "specs": [
    "openapi/_original/shipday-openapi.yml"
+  ]
+ },
+ {
+  "slug": "shipengine",
+  "specs": [
+   "openapi/_original/shipengine-openapi-docs-bundle.yaml",
+   "openapi/_original/shipengine-openapi-github.yaml"
   ]
  },
  {

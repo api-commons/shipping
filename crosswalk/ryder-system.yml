@@ -10,8 +10,8 @@ concepts:
       id: shipmentId
       status: status
       to_address: destination
-      created_at: createdAt
       from_address: origin
+      created_at: createdAt
       updated_at: updatedAt
     core_coverage: 1.0
     evidence:

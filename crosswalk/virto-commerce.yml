@@ -10,8 +10,8 @@ concepts:
       id: id
       status: status
       to_address: deliveryAddress
-      created_at: createdDate
       from_address: from
+      created_at: createdDate
       tracking_number: trackingNumber
       updated_at: modifiedDate
       parcels:

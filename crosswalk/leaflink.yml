@@ -9,8 +9,8 @@ concepts:
     properties:
       status: status
       to_address: destination
-      created_at: created_on
       from_address: pickup_address
+      created_at: created_on
     core_coverage: 0.5
     evidence:
     - openapi/_original/leaflink-api-openapi-original.yml#GET /deliveries

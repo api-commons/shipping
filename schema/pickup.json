@@ -2,59 +2,83 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/pickup.json",
   "title": "Pickup",
-  "description": "The common pickup in Shipping, distilled from 7 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common pickup in Shipping, distilled from 9 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.714,
+      "x-commons-share": 0.667,
+      "x-commons-providers": 6,
+      "x-commons-spellings": [
+        "id",
+        "pickup_id"
+      ]
+    },
+    "address": {
+      "type": "object",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.556,
       "x-commons-providers": 5,
       "x-commons-spellings": [
-        "id"
+        "address",
+        "location",
+        "pickup_address"
       ]
     },
     "pickup_date": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.571,
-      "x-commons-providers": 4,
+      "x-commons-share": 0.556,
+      "x-commons-providers": 5,
       "x-commons-spellings": [
         "pickup_date",
         "date",
+        "pickupDate",
         "ready_time"
       ]
     },
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.571,
-      "x-commons-providers": 4,
+      "x-commons-share": 0.556,
+      "x-commons-providers": 5,
       "x-commons-spellings": [
         "status",
         "state"
       ]
     },
-    "address": {
-      "type": "object",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.429,
-      "x-commons-providers": 3,
-      "x-commons-spellings": [
-        "address"
-      ]
-    },
     "carrier": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.429,
-      "x-commons-providers": 3,
+      "x-commons-share": 0.444,
+      "x-commons-providers": 4,
       "x-commons-spellings": [
+        "carrier_id",
         "carrierCode",
         "carrier_name",
-        "carrier_id",
+        "carrier_code",
         "carrier"
       ]
+    },
+    "confirmation_number": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.333,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "confirmation_number"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.333,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "created_at"
+      ],
+      "format": "date-time"
     }
   },
   "required": [
@@ -63,7 +87,7 @@
   "x-commons": {
     "context": "shipping",
     "concept": "pickup",
-    "providers": 7,
+    "providers": 9,
     "generated": "2026-11-12",
     "version": "0.1.0-draft.20261112",
     "status": "draft"
