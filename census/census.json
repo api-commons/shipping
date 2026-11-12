@@ -1,5 +1,5 @@
 {
- "cohort_size": 258,
+ "cohort_size": 260,
  "unreadable": [],
  "concepts": {
   "shipment": {
@@ -1135,6 +1135,36 @@
     "evidence": [
      "openapi/_original/emerge-public-api-openapi.json#GET /shipments/{shipment_id}",
      "openapi/_original/emerge-public-api-openapi.yml#GET /shipments/{shipment_id}"
+    ]
+   },
+   "fedex": {
+    "segments": [
+     "shipments"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "customerTransactionId": "string",
+     "transactionId": "string",
+     "output": "object",
+     "accountNumber": "object",
+     "consolidationKey": "object",
+     "processingOptionType": "string",
+     "index": "string",
+     "shipAction": "string",
+     "requestedShipment": "object",
+     "processingOptions": "array",
+     "labelResponseOptions": "string",
+     "version": "object",
+     "freightRequestedShipment": "object",
+     "oneLabelAtATime": "boolean",
+     "mergeLabelDocOption": "string"
+    },
+    "evidence": [
+     "openapi/_original/consolidation__ShipConsolidation-Resource.json#POST /ship/v1/consolidations/shipments",
+     "openapi/_original/ltl-freight__LTLFreight-Resource.json#POST /ship/v1/freight/shipments",
+     "openapi/_original/ship__Shipment-Resource.json#POST /ship/v1/shipments"
     ]
    },
    "geniemode": {
@@ -3705,6 +3735,30 @@
      "openapi/_original/easyship-openapi.yml#POST /rates"
     ]
    },
+   "fedex": {
+    "segments": [
+     "quotes"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "transactionId": "string",
+     "customerTransactionId": "string",
+     "output": "object",
+     "accountNumber": "object",
+     "rateRequestControlParameters": "object",
+     "freightRequestedShipment": "object",
+     "version": "object",
+     "requestedShipment": "object",
+     "processingOptions": "array",
+     "carrierCodes": "array"
+    },
+    "evidence": [
+     "openapi/_original/ltl-freight__LTLFreight-Resource.json#POST /rate/v1/freight/rates/quotes",
+     "openapi/_original/rate__RateQuotes-Resource.json#POST /rate/v1/rates/quotes"
+    ]
+   },
    "gopuff": {
     "segments": [
      "rates"
@@ -4898,6 +4952,68 @@
      "openapi/_original/uniuni-platform-client-api-openapi.yml#GET /client/label/{id}"
     ]
    },
+   "usps": {
+    "segments": [
+     "label"
+    ],
+    "operations": [
+     "DELETE collection",
+     "DELETE item",
+     "PATCH item",
+     "POST collection"
+    ],
+    "properties": {
+     "labelAddress": "object",
+     "routingInformation": "string",
+     "trackingNumber": "string",
+     "constructCode": "string",
+     "SKU": "string",
+     "postage": "number",
+     "extraServices": "array",
+     "serviceTypeCode": "string",
+     "zone": "string",
+     "mailingDate": "string",
+     "commitment": "object",
+     "weightUOM": "string",
+     "weight": "number",
+     "dimensionalWeight": "number",
+     "fees": "array",
+     "permitHolderName": "string",
+     "inductionType": "object",
+     "labelBrokerID": "string",
+     "bannerText": "string",
+     "retailDistributionCode": "string",
+     "returnReceiptTrackingNumber": "string",
+     "links": "array",
+     "warnings": "array",
+     "labelImage": "string",
+     "receiptImage": "string",
+     "labelBrokerQR": "string",
+     "returnLabel": null,
+     "imageInfo": null,
+     "toAddress": "object",
+     "fromAddress": "object",
+     "senderAddress": "object",
+     "returnAddress": null,
+     "packageDescription": null,
+     "customsForm": null,
+     "status": "string",
+     "disputeId": "string",
+     "op": "string",
+     "path": "string",
+     "value": null
+    },
+    "evidence": [
+     "openapi/_original/usps-domestic-labels-openapi.yml#DELETE /label",
+     "openapi/_original/usps-domestic-labels-openapi.yml#DELETE /label/{trackingNumber}",
+     "openapi/_original/usps-domestic-labels-openapi.yml#PATCH /label/{trackingNumber}",
+     "openapi/_original/usps-domestic-labels-openapi.yml#POST /label",
+     "openapi/_original/usps-domestic-labels-openapi_2.yml#DELETE /label",
+     "openapi/_original/usps-domestic-labels-openapi_2.yml#DELETE /label/{trackingNumber}",
+     "openapi/_original/usps-domestic-labels-openapi_2.yml#PATCH /label/{trackingNumber}",
+     "openapi/_original/usps-domestic-labels-openapi_2.yml#POST /label"
+    ]
+   },
    "veho": {
     "segments": [
      "labels"
@@ -6021,6 +6137,77 @@
      "openapi/_original/uniuni-platform-client-api-openapi.yml#GET /client/tracking"
     ]
    },
+   "usps": {
+    "segments": [
+     "tracking"
+    ],
+    "operations": [
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "trackingNumber": "string",
+     "expectedDeliveryDate": "string",
+     "expectedDeliveryTime": "string",
+     "guaranteedDeliveryDate": "string",
+     "eventSummaries": "array",
+     "accessControl": "string",
+     "associatedTrackingNumber": "string",
+     "destinationCity": "string",
+     "destinationCountry": "string",
+     "destinationState": "string",
+     "destinationZIPCode": "string",
+     "kahalaIndicator": "boolean",
+     "mailClass": "string",
+     "mailClassCode": "string",
+     "mailingDate": "string",
+     "mailType": "string",
+     "originCity": "string",
+     "originCountry": "string",
+     "originState": "string",
+     "originZIPCode": "string",
+     "services": "array",
+     "serviceTypeCode": "string",
+     "status": "string",
+     "statusCategory": "string",
+     "statusSummary": "string",
+     "uniqueTrackingID": "string",
+     "endOfDay": "string",
+     "guaranteedDetails": "string",
+     "predictedDeliveryDate": "string",
+     "predictedDeliverySource": "string",
+     "predictedDeliveryWindowStartTime": "string",
+     "predictedDeliveryWindowEndTime": "string",
+     "proofOfDeliveryEnabled": "boolean",
+     "RREEnabled": "boolean",
+     "trackingProofOfDeliveryEnabled": "boolean",
+     "acceptanceTypeCategory": "string",
+     "acceptanceTypeCategoryCode": "string",
+     "actionCode": "string",
+     "CODAmountDue": "string",
+     "eventCity": "string",
+     "eventCode": "string",
+     "eventCountry": "string",
+     "eventPartner": "string",
+     "eventState": "string",
+     "eventTimestamp": "string",
+     "eventType": "string",
+     "eventZIPCode": "string",
+     "firm": "string",
+     "GMTTimestamp": "string",
+     "GMTOffset": "string",
+     "reasonCode": "string",
+     "recipientName": "string",
+     "veriPoint": "boolean",
+     "includeVeriPoint": "boolean"
+    },
+    "evidence": [
+     "openapi/_original/usps-tracking-openapi.yml#GET /tracking/{trackingNumber}",
+     "openapi/_original/usps-tracking-openapi_2.yml#GET /tracking/{trackingNumber}",
+     "openapi/_original/usps-tracking-v3r2-openapi.yml#POST /tracking",
+     "openapi/_original/usps-tracking-v3r2-openapi_2.yml#POST /tracking"
+    ]
+   },
    "veho": {
     "segments": [
      "tracking"
@@ -6187,6 +6374,42 @@
     "evidence": [
      "openapi/_original/easyship-openapi.yml#GET /pickups",
      "openapi/_original/easyship-openapi.yml#POST /pickups"
+    ]
+   },
+   "fedex": {
+    "segments": [
+     "pickups"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "transactionId": "string",
+     "customerTransactionId": "string",
+     "output": "object",
+     "associatedAccountNumber": null,
+     "originDetail": null,
+     "totalWeight": "array",
+     "packageCount": "integer",
+     "remarks": "string",
+     "countryRelationships": "string",
+     "trackingNumber": "string",
+     "commodityDescription": "string",
+     "freightPickupDetail": null,
+     "oversizePackageCount": "integer",
+     "pickupNotificationDetail": null,
+     "associatedAccountNumberType": "string",
+     "carrierCode": "string",
+     "requestedExpressPickupDetail": "object",
+     "accountAddressOfRecord": null,
+     "pickupType": "string",
+     "expressFreightDetail": null,
+     "pickupChargesPayment": null,
+     "version": "object"
+    },
+    "evidence": [
+     "openapi/_original/ltl-freight__LTLFreight-Resource.json#POST /pickup/v1/freight/pickups/",
+     "openapi/_original/pickup__Pickup-Resource.json#POST /pickup/v1/pickups"
     ]
    },
    "grubhub": {
@@ -7759,6 +7982,7 @@
     "etsy",
     "evergreen-marine",
     "extensiv",
+    "fedex",
     "finditparts",
     "fleetbase",
     "fleetmon",
@@ -7915,6 +8139,7 @@
     "uber-eats",
     "uniuni",
     "ups",
+    "usps",
     "vayana-network",
     "veho",
     "vesselfinder",
@@ -8069,6 +8294,7 @@
     "transload",
     "uber",
     "uber-eats",
+    "usps",
     "vayana-network",
     "veho",
     "virto-commerce",
@@ -8193,6 +8419,7 @@
     "tive",
     "turvo",
     "uniuni",
+    "usps",
     "vayana-network",
     "veho",
     "virto-commerce",
@@ -8338,6 +8565,7 @@
     "etsy",
     "evergreen-marine",
     "extensiv",
+    "fedex",
     "finditparts",
     "fleetbase",
     "fleetmon",
@@ -8466,6 +8694,7 @@
     "uber-eats",
     "uniuni",
     "ups",
+    "usps",
     "vayana-network",
     "veho",
     "vesselfinder",
@@ -8523,6 +8752,7 @@
     "einride",
     "evergreen-marine",
     "extensiv",
+    "fedex",
     "gelato",
     "geniemode",
     "getcircuit-com",
@@ -8596,6 +8826,7 @@
     "turvo",
     "uniuni",
     "ups",
+    "usps",
     "vayana-network",
     "veho",
     "virto-commerce",
@@ -8696,6 +8927,7 @@
     "tradeverifyd",
     "treadio",
     "uber",
+    "usps",
     "vesselfinder",
     "vizion",
     "walmart",
@@ -8760,6 +8992,7 @@
     "picker",
     "sertica",
     "shipbob",
+    "usps",
     "vesselfinder",
     "virto-commerce",
     "wholechain"
@@ -8815,6 +9048,7 @@
     "einride",
     "emerge",
     "etsy",
+    "fedex",
     "fleetbase",
     "fleetmon",
     "fleetsu",
@@ -8899,6 +9133,7 @@
     "turvo",
     "uniuni",
     "ups",
+    "usps",
     "vayana-network",
     "veho",
     "vesselfinder",
@@ -9031,6 +9266,7 @@
     "transload",
     "uniuni",
     "ups",
+    "usps",
     "vayana-network",
     "vesselfinder",
     "virto-commerce",
@@ -9134,6 +9370,7 @@
     "lufthansa-cargo",
     "sertica",
     "shippo",
+    "usps",
     "walmart"
    ],
    "kebab-case": [
@@ -9141,6 +9378,7 @@
     "newstore",
     "optoro",
     "treadio",
+    "usps",
     "vayana-network",
     "zalando"
    ],
@@ -9243,6 +9481,7 @@
     "uber",
     "uber-direct",
     "uber-eats",
+    "usps",
     "vesselfinder",
     "walmart",
     "whiplash",
@@ -9373,6 +9612,7 @@
     "uber",
     "uber-direct",
     "uber-eats",
+    "usps",
     "walmart",
     "wish"
    ],
@@ -9418,6 +9658,7 @@
     "trabex",
     "tradeverifyd",
     "turvo",
+    "usps",
     "wholechain",
     "zalando"
    ],
@@ -9601,6 +9842,7 @@
     "einride",
     "emerge",
     "etsy",
+    "fedex",
     "fleetbase",
     "geniemode",
     "getcircuit-com",
@@ -9668,6 +9910,7 @@
     "uber-direct",
     "uber-eats",
     "uniuni",
+    "usps",
     "veho",
     "virto-commerce",
     "vooma",
@@ -9698,6 +9941,7 @@
     "echo-global",
     "eci-solutions",
     "einride",
+    "fedex",
     "getcircuit-com",
     "got-its",
     "grab",
@@ -9731,6 +9975,7 @@
     "trabex",
     "turvo",
     "uniuni",
+    "usps",
     "veho",
     "virto-commerce",
     "vooma",
@@ -9795,7 +10040,8 @@
    ],
    "PascalCase": [
     "automile",
-    "ups"
+    "ups",
+    "usps"
    ],
    "other": [
     "kibo-commerce",

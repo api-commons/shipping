@@ -1,7 +1,7 @@
 provider: hypertrack
 apis_io: https://apis.io/providers/hypertrack/
 context: shipping
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   tracking:
     path_segment:
@@ -10,7 +10,6 @@ concepts:
     properties:
       status: status
       created_at: created_at
-      metadata: metadata
     core_coverage: 0.5
     evidence:
     - openapi/_original/hypertrack-openapi.yaml#GET /tracking/{tracking_id}

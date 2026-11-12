@@ -1,8 +1,8 @@
 openapi: 3.1.0
 info:
   title: Shipping (API Commons)
-  version: 0.1.0-draft.20261111
-  description: 'The common Shipping interface, distilled from the harvested OpenAPI of 258 providers in the APIs.io
+  version: 0.1.0-draft.20261112
+  description: 'The common Shipping interface, distilled from the harvested OpenAPI of 260 providers in the APIs.io
     catalog. Not a product: no one serves this API. It is the shape the market already shares, measured, so that
     providers, agents and integrators can map to one vocabulary. See profile.yml.'
   license:
@@ -18,7 +18,7 @@ paths:
       tags:
       - Shipments
       x-commons-tier: core
-      x-commons-share: 0.744
+      x-commons-share: 0.734
       responses:
         '200':
           description: OK
@@ -32,7 +32,7 @@ paths:
       tags:
       - Shipments
       x-commons-tier: extended
-      x-commons-share: 0.346
+      x-commons-share: 0.342
       responses:
         '200':
           description: OK
@@ -50,7 +50,7 @@ paths:
       tags:
       - Shipments
       x-commons-tier: extended
-      x-commons-share: 0.256
+      x-commons-share: 0.253
       responses:
         '200':
           description: OK
@@ -64,7 +64,7 @@ paths:
       tags:
       - Shipments
       x-commons-tier: core
-      x-commons-share: 0.705
+      x-commons-share: 0.709
       responses:
         '200':
           description: OK
@@ -82,7 +82,7 @@ paths:
       tags:
       - Shipments
       x-commons-tier: core
-      x-commons-share: 0.603
+      x-commons-share: 0.595
       responses:
         '200':
           description: OK
@@ -107,7 +107,7 @@ paths:
       tags:
       - Rates
       x-commons-tier: core
-      x-commons-share: 0.778
+      x-commons-share: 0.8
       responses:
         '200':
           description: OK
@@ -126,7 +126,7 @@ paths:
       tags:
       - Rates
       x-commons-tier: extended
-      x-commons-share: 0.333
+      x-commons-share: 0.3
       responses:
         '200':
           description: OK
@@ -211,7 +211,7 @@ paths:
       tags:
       - Trackings
       x-commons-tier: core
-      x-commons-share: 0.5
+      x-commons-share: 0.512
       responses:
         '200':
           description: OK
@@ -230,7 +230,7 @@ paths:
       tags:
       - Trackings
       x-commons-tier: extended
-      x-commons-share: 0.425
+      x-commons-share: 0.415
       responses:
         '200':
           description: OK
@@ -257,7 +257,7 @@ paths:
       tags:
       - Trackings
       x-commons-tier: extended
-      x-commons-share: 0.45
+      x-commons-share: 0.463
       responses:
         '200':
           description: OK
@@ -271,7 +271,7 @@ paths:
       tags:
       - Pickups
       x-commons-tier: core
-      x-commons-share: 0.75
+      x-commons-share: 0.778
       responses:
         '200':
           description: OK
@@ -290,7 +290,7 @@ paths:
       tags:
       - Pickups
       x-commons-tier: core
-      x-commons-share: 0.625
+      x-commons-share: 0.556
       responses:
         '200':
           description: OK
@@ -316,8 +316,8 @@ paths:
       summary: Get a pickup
       tags:
       - Pickups
-      x-commons-tier: core
-      x-commons-share: 0.5
+      x-commons-tier: extended
+      x-commons-share: 0.444
       responses:
         '200':
           description: OK

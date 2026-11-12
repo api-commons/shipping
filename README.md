@@ -12,14 +12,14 @@ generated. Every number below is a count of providers.
 <!-- commons:summary -->
 | Concept | Expose it | Readable schema | Core properties (share) | Collection named |
 | --- | ---: | ---: | --- | --- |
-| shipment | 78 | 72 | id 75%, status 64% | shipments 57, deliveries 15, shipment 10, delivery 5 |
-| rate | 9 | 8 | service 50% | rates 8, rate 1 |
+| shipment | 79 | 73 | id 74%, status 63% | shipments 58, deliveries 15, shipment 10, delivery 5 |
+| rate | 10 | 9 |  | rates 8, quotes 1, rate 1 |
 | label | 20 | 17 |  | labels 14, label 6, shipping-labels 2 |
-| tracking | 40 | 35 | status 60%, tracking_number 54% | tracking 28, track 7, trackers 4, trackings 4 |
-| pickup | 8 | 6 | id 83%, pickup_date 67%, status 67%, address 50% | pickups 6, pickup 2 |
+| tracking | 41 | 36 | status 61%, tracking_number 56% | tracking 29, track 7, trackers 4, trackings 4 |
+| pickup | 9 | 7 | id 71%, pickup_date 57%, status 57% | pickups 7, pickup 2 |
 | carrier | 16 | 16 | name 75%, id 56% | carriers 11, couriers 1, carrieraccounts 1, carrier 1 |
 
-Cohort: 258 providers with harvested OpenAPI, 99 crosswalks. Of the providers exposing a shipment: 70% create, 60% list, 74% fetch, 35% update, 26% delete. Generated 2026-11-11 by build.py.
+Cohort: 260 providers with harvested OpenAPI, 101 crosswalks. Of the providers exposing a shipment: 71% create, 60% list, 73% fetch, 34% update, 25% delete. Generated 2026-11-12 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The

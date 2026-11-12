@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/rate.json",
   "title": "Rate",
-  "description": "The common rate in Shipping, distilled from 8 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common rate in Shipping, distilled from 9 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "service": {
       "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.5,
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.444,
       "x-commons-providers": 4,
       "x-commons-spellings": [
         "service",
@@ -20,7 +20,7 @@
     "amount": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.375,
+      "x-commons-share": 0.333,
       "x-commons-providers": 3,
       "x-commons-spellings": [
         "total_charge",
@@ -30,7 +30,7 @@
     "id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.375,
+      "x-commons-share": 0.333,
       "x-commons-providers": 3,
       "x-commons-spellings": [
         "id",
@@ -45,9 +45,9 @@
   "x-commons": {
     "context": "shipping",
     "concept": "rate",
-    "providers": 8,
-    "generated": "2026-11-11",
-    "version": "0.1.0-draft.20261111",
+    "providers": 9,
+    "generated": "2026-11-12",
+    "version": "0.1.0-draft.20261112",
     "status": "draft"
   }
 }

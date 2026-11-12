@@ -1,7 +1,7 @@
 provider: axlehire
 apis_io: https://apis.io/providers/axlehire/
 context: shipping
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   shipment:
     path_segment:

@@ -1,7 +1,7 @@
 provider: kibo-commerce
 apis_io: https://apis.io/providers/kibo-commerce/
 context: shipping
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   shipment:
     path_segment:
@@ -52,7 +52,6 @@ concepts:
       carrier:
       - carrier
       - carrierName
-      metadata: attributes
     core_coverage: 0.5
     evidence:
     - openapi/_original/kibo-commerce-fulfillment-openapi.yml#PUT /commerce/shipments/{shipmentNumber}/consolidated/packages/tracking
@@ -65,7 +64,7 @@ concepts:
     properties:
       id: id
       status: status
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/kibo-commerce-commerce-openapi.yml#DELETE /commerce/orders/{orderId}/pickups/{pickupId}
     - openapi/_original/kibo-commerce-commerce-openapi.yml#GET /commerce/orders/{orderId}/pickups/{pickupId}

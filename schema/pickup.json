@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/pickup.json",
   "title": "Pickup",
-  "description": "The common pickup in Shipping, distilled from 6 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common pickup in Shipping, distilled from 7 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.833,
+      "x-commons-share": 0.714,
       "x-commons-providers": 5,
       "x-commons-spellings": [
         "id"
@@ -17,7 +17,7 @@
     "pickup_date": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.667,
+      "x-commons-share": 0.571,
       "x-commons-providers": 4,
       "x-commons-spellings": [
         "pickup_date",
@@ -28,7 +28,7 @@
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.667,
+      "x-commons-share": 0.571,
       "x-commons-providers": 4,
       "x-commons-spellings": [
         "status",
@@ -37,11 +37,23 @@
     },
     "address": {
       "type": "object",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.5,
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.429,
       "x-commons-providers": 3,
       "x-commons-spellings": [
         "address"
+      ]
+    },
+    "carrier": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.429,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "carrierCode",
+        "carrier_name",
+        "carrier_id",
+        "carrier"
       ]
     }
   },
@@ -51,9 +63,9 @@
   "x-commons": {
     "context": "shipping",
     "concept": "pickup",
-    "providers": 6,
-    "generated": "2026-11-11",
-    "version": "0.1.0-draft.20261111",
+    "providers": 7,
+    "generated": "2026-11-12",
+    "version": "0.1.0-draft.20261112",
     "status": "draft"
   }
 }

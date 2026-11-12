@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/shipping/main/schema/shipment.json",
   "title": "Shipment",
-  "description": "The common shipment in Shipping, distilled from 72 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common shipment in Shipping, distilled from 73 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.75,
+      "x-commons-share": 0.74,
       "x-commons-providers": 54,
       "x-commons-spellings": [
         "id",
@@ -21,7 +21,7 @@
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.639,
+      "x-commons-share": 0.63,
       "x-commons-providers": 46,
       "x-commons-spellings": [
         "status",
@@ -33,7 +33,7 @@
     "to_address": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.458,
+      "x-commons-share": 0.452,
       "x-commons-providers": 33,
       "x-commons-spellings": [
         "destination",
@@ -49,7 +49,7 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.444,
+      "x-commons-share": 0.438,
       "x-commons-providers": 32,
       "x-commons-spellings": [
         "created_at",
@@ -66,7 +66,7 @@
     "from_address": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.444,
+      "x-commons-share": 0.438,
       "x-commons-providers": 32,
       "x-commons-spellings": [
         "origin",
@@ -82,7 +82,7 @@
     "tracking_number": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.319,
+      "x-commons-share": 0.315,
       "x-commons-providers": 23,
       "x-commons-spellings": [
         "tracking_number",
@@ -96,7 +96,7 @@
     "updated_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.319,
+      "x-commons-share": 0.315,
       "x-commons-providers": 23,
       "x-commons-spellings": [
         "updated_at",
@@ -113,7 +113,7 @@
     "carrier": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.278,
+      "x-commons-share": 0.274,
       "x-commons-providers": 20,
       "x-commons-spellings": [
         "carrier",
@@ -129,7 +129,7 @@
     "parcels": {
       "type": "array",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.278,
+      "x-commons-share": 0.274,
       "x-commons-providers": 20,
       "x-commons-spellings": [
         "items",
@@ -146,9 +146,9 @@
   "x-commons": {
     "context": "shipping",
     "concept": "shipment",
-    "providers": 72,
-    "generated": "2026-11-11",
-    "version": "0.1.0-draft.20261111",
+    "providers": 73,
+    "generated": "2026-11-12",
+    "version": "0.1.0-draft.20261112",
     "status": "draft"
   }
 }

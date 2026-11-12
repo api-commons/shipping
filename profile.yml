@@ -1,7 +1,7 @@
 context: shipping
 name: Shipping
-generated: '2026-11-11'
-version: 0.1.0-draft.20261111
+generated: '2026-11-12'
+version: 0.1.0-draft.20261112
 status: draft
 cohort:
   tags:
@@ -14,7 +14,7 @@ cohort:
   - Courier
   - 3PL
   - Freight
-  providers_with_harvested_openapi: 258
+  providers_with_harvested_openapi: 260
 thresholds:
   core: 0.5
   extended: 0.2
@@ -32,37 +32,37 @@ shared_specs: {}
 concepts:
   shipment:
     segments_seen:
-      shipments: 57
+      shipments: 58
       deliveries: 15
       shipment: 10
       delivery: 5
       consignments: 1
-    providers_exposing: 78
-    providers_with_readable_schema: 72
+    providers_exposing: 79
+    providers_with_readable_schema: 73
     operations:
     - operation: GET item
       providers: 58
-      share: 0.744
+      share: 0.734
       tier: core
     - operation: POST collection
-      providers: 55
-      share: 0.705
+      providers: 56
+      share: 0.709
       tier: core
     - operation: GET collection
       providers: 47
-      share: 0.603
+      share: 0.595
       tier: core
     - operation: UPDATE item
       providers: 27
-      share: 0.346
+      share: 0.342
       tier: extended
     - operation: DELETE item
       providers: 20
-      share: 0.256
+      share: 0.253
       tier: extended
     - operation: UPDATE collection
       providers: 6
-      share: 0.077
+      share: 0.076
       tier: long-tail
     - operation: POST item
       providers: 4
@@ -72,7 +72,7 @@ concepts:
     - name: id
       tier: core
       providers: 54
-      share: 0.75
+      share: 0.74
       type: string
       spellings:
       - id
@@ -83,7 +83,7 @@ concepts:
     - name: status
       tier: core
       providers: 46
-      share: 0.639
+      share: 0.63
       type: string
       spellings:
       - status
@@ -93,7 +93,7 @@ concepts:
     - name: to_address
       tier: extended
       providers: 33
-      share: 0.458
+      share: 0.452
       type: object
       spellings:
       - destination
@@ -107,7 +107,7 @@ concepts:
     - name: created_at
       tier: extended
       providers: 32
-      share: 0.444
+      share: 0.438
       type: string
       spellings:
       - created_at
@@ -121,7 +121,7 @@ concepts:
     - name: from_address
       tier: extended
       providers: 32
-      share: 0.444
+      share: 0.438
       type: object
       spellings:
       - origin
@@ -135,7 +135,7 @@ concepts:
     - name: tracking_number
       tier: extended
       providers: 23
-      share: 0.319
+      share: 0.315
       type: string
       spellings:
       - tracking_number
@@ -147,7 +147,7 @@ concepts:
     - name: updated_at
       tier: extended
       providers: 23
-      share: 0.319
+      share: 0.315
       type: string
       spellings:
       - updated_at
@@ -161,7 +161,7 @@ concepts:
     - name: carrier
       tier: extended
       providers: 20
-      share: 0.278
+      share: 0.274
       type: string
       spellings:
       - carrier
@@ -175,7 +175,7 @@ concepts:
     - name: parcels
       tier: extended
       providers: 20
-      share: 0.278
+      share: 0.274
       type: array
       spellings:
       - items
@@ -183,7 +183,7 @@ concepts:
       - packages
       - parcel
       - pieces
-    long_tail_count: 1325
+    long_tail_count: 1336
     long_tail_sample:
     - metadata
     - weight
@@ -228,27 +228,28 @@ concepts:
   rate:
     segments_seen:
       rates: 8
+      quotes: 1
       rate: 1
-    providers_exposing: 9
-    providers_with_readable_schema: 8
+    providers_exposing: 10
+    providers_with_readable_schema: 9
     operations:
     - operation: POST collection
-      providers: 7
-      share: 0.778
+      providers: 8
+      share: 0.8
       tier: core
     - operation: GET collection
       providers: 3
-      share: 0.333
+      share: 0.3
       tier: extended
     - operation: GET item
       providers: 2
-      share: 0.222
+      share: 0.2
       tier: long-tail
     properties:
     - name: service
-      tier: core
+      tier: extended
       providers: 4
-      share: 0.5
+      share: 0.444
       type: string
       spellings:
       - service
@@ -258,7 +259,7 @@ concepts:
     - name: amount
       tier: extended
       providers: 3
-      share: 0.375
+      share: 0.333
       type: object
       spellings:
       - total_charge
@@ -266,13 +267,13 @@ concepts:
     - name: id
       tier: extended
       providers: 3
-      share: 0.375
+      share: 0.333
       type: string
       spellings:
       - id
       - guid
       - object_id
-    long_tail_count: 97
+    long_tail_count: 106
     long_tail_sample:
     - carrier
     - created_at
@@ -281,6 +282,7 @@ concepts:
     - ship_date
     - transit_days
     - accessorials
+    - account_number
     - action
     - actual_weight
     - amount_local
@@ -290,6 +292,7 @@ concepts:
     - billing_address
     - booking_cut_off
     - carrier_accounts
+    - carrier_codes
     - carrier_ids
     - channel_details
     - charge_weight
@@ -298,6 +301,7 @@ concepts:
     - courier_name
     - currency_local
     - currency_no
+    - customer_transaction_id
     - customs
     - declared_currency
     - declared_customs_value
@@ -309,11 +313,8 @@ concepts:
     - detailed_charges
     - error_message
     - expected_delivery_date
+    - freight_requested_shipment
     - full_value_coverage_details
-    - height
-    - hs_code
-    - identifiers
-    - ineligible_rates
   label:
     segments_seen:
       labels: 14
@@ -435,43 +436,43 @@ concepts:
     - containers
   tracking:
     segments_seen:
-      tracking: 28
+      tracking: 29
       track: 7
       trackers: 4
       trackings: 4
       tracks: 1
-    providers_exposing: 40
-    providers_with_readable_schema: 35
+    providers_exposing: 41
+    providers_with_readable_schema: 36
     operations:
     - operation: POST collection
-      providers: 20
-      share: 0.5
+      providers: 21
+      share: 0.512
       tier: core
     - operation: GET item
-      providers: 18
-      share: 0.45
+      providers: 19
+      share: 0.463
       tier: extended
     - operation: GET collection
       providers: 17
-      share: 0.425
+      share: 0.415
       tier: extended
     - operation: UPDATE collection
       providers: 4
-      share: 0.1
+      share: 0.098
       tier: long-tail
     - operation: DELETE item
       providers: 2
-      share: 0.05
+      share: 0.049
       tier: long-tail
     - operation: UPDATE item
       providers: 2
-      share: 0.05
+      share: 0.049
       tier: long-tail
     properties:
     - name: status
       tier: core
-      providers: 21
-      share: 0.6
+      providers: 22
+      share: 0.611
       type: string
       spellings:
       - status
@@ -479,8 +480,8 @@ concepts:
       - tracking_status
     - name: tracking_number
       tier: core
-      providers: 19
-      share: 0.543
+      providers: 20
+      share: 0.556
       type: string
       spellings:
       - tracking_number
@@ -494,7 +495,7 @@ concepts:
     - name: carrier
       tier: extended
       providers: 11
-      share: 0.314
+      share: 0.306
       type: string
       spellings:
       - carrier
@@ -508,7 +509,7 @@ concepts:
     - name: id
       tier: extended
       providers: 10
-      share: 0.286
+      share: 0.278
       type: string
       spellings:
       - id
@@ -518,51 +519,40 @@ concepts:
     - name: created_at
       tier: extended
       providers: 9
-      share: 0.257
+      share: 0.25
       type: string
       spellings:
       - createdAt
       - created_at
       - created
-    - name: location
-      tier: extended
-      providers: 7
-      share: 0.2
-      type: object
-      spellings:
-      - location
-    - name: metadata
-      tier: extended
-      providers: 7
-      share: 0.2
-      type: object
-      spellings:
-      - metadata
-      - attributes
-      - reference
-    long_tail_count: 373
+    long_tail_count: 419
     long_tail_sample:
+    - location
+    - metadata
     - events
     - updated_at
     - code
+    - service
     - description
     - destination
-    - service
     - city
+    - destination_country
     - details
     - estimated_delivery
+    - event_type
     - latitude
     - longitude
     - order_id
     - order_number
+    - origin_country
     - ship_date
     - signature_required
     - weight
     - country
     - datetime
-    - destination_country
+    - event_code
     - event_time
-    - event_type
+    - expected_delivery_date
     - field
     - height
     - info
@@ -571,60 +561,55 @@ concepts:
     - note
     - order
     - origin
-    - origin_country
     - recipient
     - refunds
+    - services
     - shipment
     - source_id
-    - title
-    - tracking_history
-    - tracking_url
-    - width
-    - zip
-    - accepted
+    - status_category
   pickup:
     segments_seen:
-      pickups: 6
+      pickups: 7
       pickup: 2
-    providers_exposing: 8
-    providers_with_readable_schema: 6
+    providers_exposing: 9
+    providers_with_readable_schema: 7
     operations:
     - operation: POST collection
-      providers: 6
-      share: 0.75
+      providers: 7
+      share: 0.778
       tier: core
     - operation: GET collection
       providers: 5
-      share: 0.625
+      share: 0.556
       tier: core
     - operation: GET item
       providers: 4
-      share: 0.5
-      tier: core
+      share: 0.444
+      tier: extended
     - operation: DELETE item
       providers: 2
-      share: 0.25
+      share: 0.222
       tier: long-tail
     - operation: UPDATE item
       providers: 2
-      share: 0.25
+      share: 0.222
       tier: long-tail
     - operation: POST item
       providers: 1
-      share: 0.125
+      share: 0.111
       tier: long-tail
     properties:
     - name: id
       tier: core
       providers: 5
-      share: 0.833
+      share: 0.714
       type: string
       spellings:
       - id
     - name: pickup_date
       tier: core
       providers: 4
-      share: 0.667
+      share: 0.571
       type: string
       spellings:
       - pickup_date
@@ -633,40 +618,58 @@ concepts:
     - name: status
       tier: core
       providers: 4
-      share: 0.667
+      share: 0.571
       type: string
       spellings:
       - status
       - state
     - name: address
-      tier: core
+      tier: extended
       providers: 3
-      share: 0.5
+      share: 0.429
       type: object
       spellings:
       - address
-    long_tail_count: 59
+    - name: carrier
+      tier: extended
+      providers: 3
+      share: 0.429
+      type: string
+      spellings:
+      - carrierCode
+      - carrier_name
+      - carrier_id
+      - carrier
+    long_tail_count: 77
     long_tail_sample:
-    - carrier
     - code
     - confirmation_number
     - created_at
     - items
     - metadata
     - name
+    - tracking_number
+    - account_address_of_record
     - address_line_1
     - address_line_2
+    - associated_account_number
+    - associated_account_number_type
     - audit_info
     - available_actions
     - cart
     - change_messages
     - city
     - closing_time
+    - commodity_description
+    - country_relationships
+    - customer_transaction_id
     - delivery_address
     - delivery_instructions
     - details
     - distance
     - end
+    - express_freight_detail
+    - freight_pickup_detail
     - fulfillment_date
     - fulfillment_location_code
     - fulfillment_type
@@ -678,15 +681,7 @@ concepts:
     - merchant_id
     - object_type
     - options
-    - package_location
-    - parcels
-    - pickup_charge
-    - pickup_confirmation_numbers
-    - pickup_end_time
-    - pickup_from
-    - pickup_instructions
-    - pickup_location
-    - pickup_location_code
+    - origin_detail
   carrier:
     segments_seen:
       carriers: 11

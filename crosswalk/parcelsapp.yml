@@ -1,7 +1,7 @@
 provider: parcelsapp
 apis_io: https://apis.io/providers/parcelsapp/
 context: shipping
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   tracking:
     path_segment:
@@ -9,7 +9,6 @@ concepts:
     properties:
       status: status
       tracking_number: trackingId
-      metadata: attributes
     core_coverage: 1.0
     evidence:
     - openapi/_original/parcelsapp-openapi.yml#GET /shipments/tracking

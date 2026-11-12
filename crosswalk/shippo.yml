@@ -1,7 +1,7 @@
 provider: shippo
 apis_io: https://apis.io/providers/shippo/
 context: shipping
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   shipment:
     path_segment:
@@ -26,7 +26,7 @@ concepts:
       service: servicelevel
       amount: amount
       id: object_id
-    core_coverage: 1.0
+    core_coverage: 0.0
     evidence:
     - openapi/_original/shippo-openapi.yml#GET /rates/{RateId}
     - openapi/_original/shippo-openapi.yml#GET /shipments/{ShipmentId}/rates
@@ -37,7 +37,6 @@ concepts:
       status: tracking_status
       tracking_number: tracking_number
       carrier: carrier
-      metadata: metadata
     core_coverage: 1.0
     evidence:
     - openapi/_original/shippo-openapi.yml#POST /tracks

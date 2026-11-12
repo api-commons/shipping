@@ -1,14 +1,13 @@
 provider: automated-sorting-systems
 apis_io: https://apis.io/providers/automated-sorting-systems/
 context: shipping
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   tracking:
     path_segment:
     - tracking
     properties:
       status: state
-      location: location
     core_coverage: 0.5
     evidence:
     - openapi/_original/automated-sorting-systems-vanderlande-datahub-openapi.json#POST /bagtags/events/tracking

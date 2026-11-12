@@ -1,7 +1,7 @@
 provider: amazon-seller-central
 apis_io: https://apis.io/providers/amazon-seller-central/
 context: shipping
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   shipment:
     path_segment:
@@ -38,7 +38,6 @@ concepts:
     properties:
       tracking_number: trackingNumber
       carrier: carrierCode
-      location: location
     core_coverage: 0.5
     evidence:
     - openapi/_original/amazon-seller-central-fulfillment-outbound-2020-07-01-original.json#GET /fba/outbound/2020-07-01/tracking

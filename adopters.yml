@@ -1,5 +1,5 @@
 context: shipping
-generated: '2026-11-11'
+generated: '2026-11-12'
 adopters:
 - provider: 99-minutos
   apis_io: https://apis.io/providers/99-minutos/
@@ -174,6 +174,13 @@ adopters:
   crosswalk: crosswalk/etsy.yml
   concepts:
   - tracking
+- provider: fedex
+  apis_io: https://apis.io/providers/fedex/
+  crosswalk: crosswalk/fedex.yml
+  concepts:
+  - pickup
+  - rate
+  - shipment
 - provider: fleetbase
   apis_io: https://apis.io/providers/fleetbase/
   crosswalk: crosswalk/fleetbase.yml
@@ -531,6 +538,11 @@ adopters:
   concepts:
   - label
   - shipment
+  - tracking
+- provider: usps
+  apis_io: https://apis.io/providers/usps/
+  crosswalk: crosswalk/usps.yml
+  concepts:
   - tracking
 - provider: veho
   apis_io: https://apis.io/providers/veho/
