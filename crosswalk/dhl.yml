@@ -1,0 +1,87 @@
+provider: dhl
+apis_io: https://apis.io/providers/dhl/
+context: shipping
+generated: '2026-11-12'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    - shipment
+    properties:
+      id:
+      - id
+      - labelId
+      - shipmentId
+      status: state
+      to_address:
+      - recipient
+      - receiver
+      from_address: shipper
+      parcels:
+      - packages
+      - pieces
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dhl-deutsche-post-international-post-parcel-germany-openapi.yml#GET /dpi/shipping/v1/orders/{orderId}/shipments
+    - openapi/_original/dhl-deutsche-post-international-post-parcel-germany-openapi.yml#GET /dpi/shipping/v1/shipments/{awb}
+    - openapi/_original/dhl-ecommerce-uk-openapi.json#GET /tracking/v1/shipments
+    - openapi/_original/dhl-mydhl-api-dhl-express-openapi.yml#POST /shipments
+    - openapi/_original/dhl-parcel-eu-openapi.yml#POST /shipments
+  rate:
+    path_segment:
+    - rates
+    properties:
+      packages: packages
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/dhl-mydhl-api-dhl-express-openapi.yml#GET /rates
+    - openapi/_original/dhl-mydhl-api-dhl-express-openapi.yml#POST /rates
+  label:
+    path_segment:
+    - label
+    - labels
+    properties:
+      tracking_number: trackingId
+      id: labelId
+      shipment_id: shipmentId
+      created_at: createdOn
+      label_format:
+      - format
+      - labelType
+      - labelFormat
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/dhl-deutsche-post-international-post-parcel-germany-openapi.yml#GET /dpi/shipping/v1/bulk/label
+    - openapi/_original/dhl-deutsche-post-international-post-parcel-germany-openapi.yml#GET /dpi/shipping/v1/customers/{customerEkp}/bags/{bagId}/label
+    - openapi/_original/dhl-deutsche-post-international-post-parcel-germany-openapi.yml#GET /dpi/shipping/v1/customers/{customerEkp}/items/{barcode}/label
+    - openapi/_original/dhl-deutsche-post-international-post-parcel-germany-openapi.yml#GET /dpi/shipping/v1/items/{itemId}/label
+    - openapi/_original/dhl-dhl-parcel-de-private-shipping-post-parcel-germany-openapi.yml#GET /labels/{pakId}
+  tracking:
+    path_segment:
+    - trackings
+    - tracking
+    properties:
+      status: status
+      tracking_number: awb
+      events: events
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dhl-deutsche-post-international-post-parcel-germany-openapi.yml#GET /dpi/tracking/v1/trackings/{barcode}
+    - openapi/_original/dhl-deutsche-post-international-post-parcel-germany-openapi.yml#GET /dpi/tracking/v3/trackings/{barcode}
+    - openapi/_original/dhl-mydhl-api-dhl-express-openapi.yml#GET /shipments/{shipmentTrackingNumber}/tracking
+    - openapi/_original/dhl-mydhl-api-dhl-express-openapi.yml#GET /tracking
+  pickup:
+    path_segment:
+    - pickups
+    - pickup
+    properties:
+      address: location
+      pickup_date: pickupDate
+      status: status
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/dhl-ecommerce-uk-openapi.json#GET /pickup/v1/pickup
+    - openapi/_original/dhl-ecommerce-uk-openapi.json#GET /pickup/v1/pickups
+    - openapi/_original/dhl-ecommerce-uk-openapi.json#POST /pickup/v1/pickup
+    - openapi/_original/dhl-mydhl-api-dhl-express-openapi.yml#DELETE /pickups/{dispatchConfirmationNumber}
+    - openapi/_original/dhl-mydhl-api-dhl-express-openapi.yml#PATCH /pickups/{dispatchConfirmationNumber}
