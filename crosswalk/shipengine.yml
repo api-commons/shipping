@@ -1,0 +1,134 @@
+provider: shipengine
+apis_io: https://apis.io/providers/shipengine/
+context: shipping
+generated: '2026-11-12'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    - shipment
+    properties:
+      id:
+      - shipment_id
+      - label_id
+      status:
+      - status
+      - tracking_status
+      - shipment_status
+      to_address: ship_to
+      from_address: ship_from
+      created_at: created_at
+      tracking_number: tracking_number
+      updated_at: modified_at
+      parcels:
+      - packages
+      - items
+      carrier:
+      - carrier_id
+      - carrier_code
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#DELETE /v1/freight/shipments/{freight_shipment_id}
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/freight/shipments
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/freight/shipments/{freight_shipment_id}
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/shipments
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/shipments/{shipment_id}
+  rate:
+    path_segment:
+    - rates
+    properties:
+      service:
+      - service_code
+      - service_type
+      amount: shipping_amount
+      id:
+      - label_id
+      - rate_id
+      carrier:
+      - carrier_id
+      - carrier_code
+      created_at: created_at
+      packages: packages
+      ship_date: ship_date
+      transit_days: delivery_days
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/rates/{rate_id}
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/shipments/{shipment_id}/rates
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#POST /v1/labels/rates/{rate_id}
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#POST /v1/rates
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#POST /v1/rates/bulk
+  label:
+    path_segment:
+    - labels
+    properties:
+      tracking_number: tracking_number
+      id: label_id
+      service: service_code
+      shipment_id:
+      - shipment_id
+      - shipment
+      carrier:
+      - carrier_id
+      - carrier_code
+      created_at: created_at
+      label_format: label_format
+      type: type
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/labels
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/labels/{label_id}
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/shipments/{shipment_id}/labels
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#POST /v1/batches/{batch_id}/process/labels
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#POST /v1/labels
+  tracking:
+    path_segment:
+    - tracking
+    - track
+    properties:
+      status:
+      - status
+      - tracking_status
+      tracking_number: tracking_number
+      carrier:
+      - carrier_code
+      - carrier_id
+      events: events
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/freight/shipments/{freight_shipment_id}/tracking
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/freight/tracking
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/labels/{label_id}/track
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/tracking
+    - openapi/_original/shipengine-openapi-github.yaml#GET /v1/labels/{label_id}/track
+  pickup:
+    path_segment:
+    - pickups
+    properties:
+      id: pickup_id
+      address: pickup_address
+      carrier:
+      - carrier_id
+      - carrier_code
+      confirmation_number: confirmation_number
+      created_at: created_at
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#DELETE /v1/pickups/{pickup_id}
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/pickups
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/pickups/{pickup_id}
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#POST /v1/pickups
+    - openapi/_original/shipengine-openapi-github.yaml#DELETE /v1/pickups/{pickup_id}
+  carrier:
+    path_segment:
+    - carriers
+    properties:
+      name: friendly_name
+      code: carrier_code
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#DELETE /v1/carriers/{carrier_id}
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/carriers
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#GET /v1/carriers/{carrier_id}
+    - openapi/_original/shipengine-openapi-docs-bundle.yaml#POST /v1/connections/carriers/{carrier_name}
+    - openapi/_original/shipengine-openapi-github.yaml#DELETE /v1/carriers/{carrier_id}

@@ -1,0 +1,31 @@
+provider: fedex
+apis_io: https://apis.io/providers/fedex/
+context: shipping
+generated: '2026-11-12'
+concepts:
+  shipment:
+    path_segment:
+    - shipments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/consolidation__ShipConsolidation-Resource.json#POST /ship/v1/consolidations/shipments
+    - openapi/_original/ltl-freight__LTLFreight-Resource.json#POST /ship/v1/freight/shipments
+    - openapi/_original/ship__Shipment-Resource.json#POST /ship/v1/shipments
+  rate:
+    path_segment:
+    - quotes
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ltl-freight__LTLFreight-Resource.json#POST /rate/v1/freight/rates/quotes
+    - openapi/_original/rate__RateQuotes-Resource.json#POST /rate/v1/rates/quotes
+  pickup:
+    path_segment:
+    - pickups
+    properties:
+      carrier: carrierCode
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ltl-freight__LTLFreight-Resource.json#POST /pickup/v1/freight/pickups/
+    - openapi/_original/pickup__Pickup-Resource.json#POST /pickup/v1/pickups
